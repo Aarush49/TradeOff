@@ -13,6 +13,9 @@ def build():
     files=[ROOT/name for name in SOURCES+DOCS]
     for directory,pattern in [('static','*'),('models','*.json'),('reports','*.json'),('tests','*.py'),('notebooks','*.ipynb')]:
         files.extend((ROOT/directory).glob(pattern))
+    files.extend((ROOT/'static'/'ui').rglob('*'))
+    files.extend(ROOT/'frontend'/name for name in ['package.json','package-lock.json','vite.config.js','index.html'])
+    files.extend((ROOT/'frontend'/'src').rglob('*'))
     destination=ROOT/'TradeOff-Realtime.zip'
     with zipfile.ZipFile(destination,'w',zipfile.ZIP_DEFLATED) as archive:
         for path in sorted(set(files)):
@@ -20,7 +23,7 @@ def build():
     with zipfile.ZipFile(destination) as archive:
         if archive.testzip() is not None: raise ValueError('ZIP verification failed.')
         names=archive.namelist()
-        if any('/data/raw/' in name or '/runtime/' in name for name in names):
+        if any('/data/raw/' in name or '/runtime/' in name or '/node_modules/' in name for name in names):
             raise ValueError('Private or runtime files must not be packaged.')
     print(f'{destination.name}: {len(names)} files, {destination.stat().st_size:,} bytes')
     return destination

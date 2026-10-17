@@ -45,11 +45,11 @@ class ServerTests(unittest.TestCase):
 
     def test_dashboard(self):
         with self.client.open(self.url) as response:
-            self.assertIn(b'Critical supply decision desk', response.read())
+            self.assertIn(b'/ui/assets/', response.read())
 
     def test_readable_audit_page_is_coordinator_only(self):
         with self.client.open(self.url + '/audit') as response:
-            self.assertIn(b'Decision timeline', response.read())
+            self.assertIn(b'/ui/assets/', response.read())
         with urlopen(self.url + '/audit') as response:
             self.assertTrue(response.url.endswith('/login'))
         factory = self.workspace_client('Factory A')
@@ -58,6 +58,18 @@ class ServerTests(unittest.TestCase):
         self.assertEqual(ctx.exception.code, 403)
         with self.client.open(self.url + '/audit.js') as response:
             self.assertIn(b'/api/live/audit', response.read())
+
+    def test_compiled_assets_and_path_boundary(self):
+        import re
+        with self.client.open(self.url) as response:
+            html = response.read().decode()
+        for path in re.findall(r'(?:src|href)="(/ui/[^"]+)"', html):
+            with urlopen(self.url + path) as response:
+                self.assertGreater(len(response.read()), 0)
+        for path in ['/ui/../server.py', '/ui/%2e%2e/server.py', '/ui/index.html']:
+            with self.assertRaises(HTTPError) as ctx:
+                urlopen(self.url + path)
+            self.assertEqual(ctx.exception.code, 404)
 
     def test_default_plan(self):
         requests, offers = demo()
@@ -130,7 +142,7 @@ class ServerTests(unittest.TestCase):
 
     def test_anonymous_login_page_and_api_gate(self):
         with urlopen(self.url) as response:
-            self.assertIn(b'Welcome to TradeOff', response.read())
+            self.assertIn(b'/ui/assets/', response.read())
         with self.assertRaises(HTTPError) as ctx:
             urlopen(self.url + '/api/model')
         self.assertEqual(ctx.exception.code, 401)

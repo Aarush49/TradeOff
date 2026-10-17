@@ -34,14 +34,14 @@ SSH-tunneled prototype, not a public production service.
 ## Demonstrate the real-time decision loop
 
 1. Sign in as **Network_Coordinator** using its generated password.
-2. In **Critical supply decision desk**, choose **Gradual congestion** and click
-   **Start new replay**. This archives the previous run and starts a new one.
+2. In **Decision desk**, choose **Gradual congestion** and click
+   **Start scenario**. This archives the previous run and starts a new one.
 3. Four checkpoint events arrive every five seconds. The background server worker
    updates shared state, scores primary-shipment risk, and creates a proposal.
    The browser polls every two seconds; it does not drive event production.
 4. The stream pauses before revealing the outcome. Open candidate scenarios,
-   then click **Review this revision** to inspect the proposed shipment table.
-5. **Approve proposed allocation** or **Reject proposal**. Only approval replaces
+   then click **Review recommendation** to inspect the proposed shipment table.
+5. **Approve & publish** or **Reject proposal**. Only approval replaces
    the shared plan. A newer event invalidates older pending proposals/reviews.
 6. Sign in as **Factory_A** in another browser profile, or sign out and change accounts.
    It sees its assigned shipments from the same approved plan.
@@ -263,10 +263,38 @@ The live model's generated episodes are a fourth, explicitly synthetic source.
 
 ## Readable audit report
 
-Choose **View decision audit** in the decision desk to open the coordinator report.
+Choose **Decision audit** in the decision desk to open the coordinator report.
 It includes the current outcome and cost breakdown, approved shipments, a timeline,
 expandable AI recommendations, and reported event changes. Select a run to inspect
 retained records from previous runs. The snapshot contains up to 200 records per
 collection across all runs; complete outcome summaries cover the current run.
 Use **Print / Save as PDF** to share a readable report or download its source JSON.
 The report uses the same coordinator permissions as the audit API.
+
+## React interface
+
+The default app is a responsive React workspace with a decision desk, model explorer,
+what-if lab, readable decision audit, and manual updates. Login remains the existing
+username/password flow. No email service, OTP, or Google OAuth is configured.
+
+The production JavaScript and CSS are bundled locally in `static/ui/`. The deployment
+ZIP includes these assets, so LinuxONE still runs only `python3 server.py`; no npm,
+Node.js, frontend CDN, or additional Python packages are required on the server.
+Keep `runtime/` when updating to preserve existing accounts and network state.
+
+For frontend development only, use Node.js 22.12+ (or 20.19+) and run:
+
+```bash
+cd frontend
+npm ci
+npm run build
+```
+
+This rebuilds `static/ui/`; refresh your browser after rebuilding. `npm run dev`
+starts a Vite development server and forwards `/api` to Python on port 8501.
+The production server's `--port` option still works as before. React sources and
+the lockfile are included in the ZIP; `node_modules/` and runtime files are excluded.
+
+The shipment model uses synthetic episodes; DataCo is a separate historical retail
+benchmark, and CSET/SMAT are contextual datasets. Interactive visuals do not imply
+a validated join or real industrial prediction accuracy.
