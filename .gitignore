@@ -5,3 +5,4 @@ __pycache__/
 .tmp/
 tradeoff.db
 *.sqlite3
+.env
