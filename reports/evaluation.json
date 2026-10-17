@@ -1,0 +1,316 @@
+{
+  "model_id": "dataco-nb-v2-fa6d022ed437",
+  "source": {
+    "url": "https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis",
+    "sha256": "fa6d022ed437155e1a2f0378710602848703c8a7f203f7ff5d77805bf8480aa6",
+    "filename": "DataCoSupplyChainDataset.csv"
+  },
+  "features": [
+    "Shipping Mode",
+    "Days for shipment (scheduled)",
+    "Order Region",
+    "Market",
+    "Customer Segment",
+    "Order Country",
+    "Type"
+  ],
+  "target": "Late_delivery_risk as recorded by DataCo, including recorded non-late outcomes",
+  "data_quality": {
+    "raw_rows": 180519,
+    "unique_order_ids": 65752,
+    "conflicting_orders_excluded": 0,
+    "usable_orders": 65752
+  },
+  "threshold": 0.46,
+  "split_method": "Order-level chronological 60/20/20 boundaries; 14-day gaps",
+  "split": {
+    "train": {
+      "orders": 38629,
+      "first_date": "2015-01-01",
+      "last_date": "2016-11-06"
+    },
+    "validation": {
+      "orders": 12322,
+      "first_date": "2016-11-21",
+      "last_date": "2017-06-24"
+    },
+    "test": {
+      "orders": 13202,
+      "first_date": "2017-07-09",
+      "last_date": "2018-01-31"
+    },
+    "gap_orders_excluded": 1599
+  },
+  "excluded_predictors": [
+    "actual shipping days",
+    "shipping date",
+    "delivery status",
+    "order status",
+    "all personal fields",
+    "all identifiers"
+  ],
+  "selection": {
+    "winner": "payment_added",
+    "objective": "Validation accuracy, recall >= 0.5",
+    "candidates": [
+      {
+        "name": "original_features",
+        "features": [
+          "Shipping Mode",
+          "Days for shipment (scheduled)",
+          "Order Region",
+          "Market",
+          "Customer Segment",
+          "Order Country"
+        ],
+        "threshold": 0.46,
+        "validation": {
+          "n": 4957,
+          "prevalence": 0.5368166229574339,
+          "accuracy": 0.6925559814403873,
+          "precision": 0.831100757134537,
+          "recall": 0.5362645621946637,
+          "f1": 0.6518958428506167,
+          "roc_auc": 0.7256246505531572,
+          "brier": 0.19890696588367188,
+          "log_loss": 0.5767155625159263,
+          "expected_calibration_error_10_bins": 0.010795335864021838,
+          "confusion_matrix": {
+            "true_negative": 2006,
+            "false_positive": 290,
+            "false_negative": 1234,
+            "true_positive": 1427
+          }
+        }
+      },
+      {
+        "name": "reduced_correlations",
+        "features": [
+          "Shipping Mode",
+          "Customer Segment",
+          "Order Country"
+        ],
+        "threshold": 0.5,
+        "validation": {
+          "n": 4957,
+          "prevalence": 0.5368166229574339,
+          "accuracy": 0.6921525115997579,
+          "precision": 0.8348082595870207,
+          "recall": 0.5317549793310785,
+          "f1": 0.6496786042240588,
+          "roc_auc": 0.7237698816430909,
+          "brier": 0.19914723541732215,
+          "log_loss": 0.5772454418831907,
+          "expected_calibration_error_10_bins": 0.01035365311796824,
+          "confusion_matrix": {
+            "true_negative": 2016,
+            "false_positive": 280,
+            "false_negative": 1246,
+            "true_positive": 1415
+          }
+        }
+      },
+      {
+        "name": "payment_added",
+        "features": [
+          "Shipping Mode",
+          "Days for shipment (scheduled)",
+          "Order Region",
+          "Market",
+          "Customer Segment",
+          "Order Country",
+          "Type"
+        ],
+        "threshold": 0.46,
+        "validation": {
+          "n": 4957,
+          "prevalence": 0.5368166229574339,
+          "accuracy": 0.6939681258825903,
+          "precision": 0.8217097862767154,
+          "recall": 0.5490417136414881,
+          "f1": 0.6582563640459563,
+          "roc_auc": 0.7311143213300388,
+          "brier": 0.19840134142628263,
+          "log_loss": 0.5747702720197722,
+          "expected_calibration_error_10_bins": 0.010112202816498102,
+          "confusion_matrix": {
+            "true_negative": 1979,
+            "false_positive": 317,
+            "false_negative": 1200,
+            "true_positive": 1461
+          }
+        }
+      },
+      {
+        "name": "reduced_with_payment",
+        "features": [
+          "Shipping Mode",
+          "Customer Segment",
+          "Order Country",
+          "Type"
+        ],
+        "threshold": 0.46,
+        "validation": {
+          "n": 4957,
+          "prevalence": 0.5368166229574339,
+          "accuracy": 0.6923542465200726,
+          "precision": 0.8100436681222707,
+          "recall": 0.557685080796693,
+          "f1": 0.6605831293122635,
+          "roc_auc": 0.7317002790337132,
+          "brier": 0.19864843373090035,
+          "log_loss": 0.5745833484494389,
+          "expected_calibration_error_10_bins": 0.016296969023442583,
+          "confusion_matrix": {
+            "true_negative": 1948,
+            "false_positive": 348,
+            "false_negative": 1177,
+            "true_positive": 1484
+          }
+        }
+      }
+    ],
+    "calibration_orders": 6552,
+    "selection_orders": 4957,
+    "calibration_last_date": "2017-03-15",
+    "selection_first_date": "2017-03-30",
+    "validation_gap_orders": 813
+  },
+  "test": {
+    "n": 13202,
+    "prevalence": 0.550295409786396,
+    "accuracy": 0.6961066505074989,
+    "precision": 0.826147984760377,
+    "recall": 0.5671025464556091,
+    "f1": 0.6725432582435521,
+    "roc_auc": 0.7460885408280407,
+    "brier": 0.19558204050171918,
+    "log_loss": 0.5679884239994151,
+    "expected_calibration_error_10_bins": 0.007874290414445635,
+    "confusion_matrix": {
+      "true_negative": 5070,
+      "false_positive": 867,
+      "false_negative": 3145,
+      "true_positive": 4120
+    }
+  },
+  "original_model_test": {
+    "n": 13202,
+    "prevalence": 0.550295409786396,
+    "accuracy": 0.693001060445387,
+    "precision": 0.8482220294882914,
+    "recall": 0.5384721266345492,
+    "f1": 0.6587522101540794,
+    "roc_auc": 0.7342453179814991,
+    "brier": 0.1965505642645263,
+    "log_loss": 0.5709687734046883,
+    "expected_calibration_error_10_bins": 0.007672971773153834,
+    "confusion_matrix": {
+      "true_negative": 5237,
+      "false_positive": 700,
+      "false_negative": 3353,
+      "true_positive": 3912
+    }
+  },
+  "constant_baseline": {
+    "n": 13202,
+    "prevalence": 0.550295409786396,
+    "accuracy": 0.550295409786396,
+    "precision": 0.550295409786396,
+    "recall": 1.0,
+    "f1": 0.7099232911516099,
+    "roc_auc": 0.5,
+    "brier": 0.24747273321731061,
+    "log_loss": 0.6880841265624766,
+    "expected_calibration_error_10_bins": 0.0015367051863393604,
+    "confusion_matrix": {
+      "true_negative": 0,
+      "false_positive": 5937,
+      "false_negative": 0,
+      "true_positive": 7265
+    }
+  },
+  "limitations": [
+    "Retail logistics is not semiconductor logistics.",
+    "No supplier availability, chip shortage, causal, or production accuracy claim.",
+    "14-day split gaps are a label-availability assumption, not verified ingestion timestamps.",
+    "Probabilities can drift; conditional-independence assumptions are approximate.",
+    "The historical test set was reported for v1. This v2 comparison is retrospective, not a fresh independent test.",
+    "Candidate and threshold selection used only the validation selection window.",
+    "Payment type is assumed available at order placement; it may reflect dataset-specific cancellation behavior."
+  ],
+  "by_shipping_mode": {
+    "First Class": {
+      "n": 2015,
+      "prevalence": 0.9493796526054591,
+      "accuracy": 0.9493796526054591,
+      "precision": 0.9493796526054591,
+      "recall": 1.0,
+      "f1": 0.9740325865580448,
+      "roc_auc": 0.8666707665815935,
+      "brier": 0.04750919810004366,
+      "log_loss": 0.1942243047283949,
+      "expected_calibration_error_10_bins": 0.005363048455545831,
+      "confusion_matrix": {
+        "true_negative": 0,
+        "false_positive": 102,
+        "false_negative": 0,
+        "true_positive": 1913
+      }
+    },
+    "Same Day": {
+      "n": 741,
+      "prevalence": 0.5060728744939271,
+      "accuracy": 0.5479082321187584,
+      "precision": 0.5543478260869565,
+      "recall": 0.544,
+      "f1": 0.5491251682368775,
+      "roc_auc": 0.5548051001821493,
+      "brier": 0.2505229841528498,
+      "log_loss": 0.6941484517453079,
+      "expected_calibration_error_10_bins": 0.05969081129258862,
+      "confusion_matrix": {
+        "true_negative": 202,
+        "false_positive": 164,
+        "false_negative": 171,
+        "true_positive": 204
+      }
+    },
+    "Second Class": {
+      "n": 2593,
+      "prevalence": 0.7697647512533745,
+      "accuracy": 0.7697647512533745,
+      "precision": 0.7697647512533745,
+      "recall": 1.0,
+      "f1": 0.8699062976683374,
+      "roc_auc": 0.5692314276794795,
+      "brier": 0.1759848757819162,
+      "log_loss": 0.5361049042976653,
+      "expected_calibration_error_10_bins": 0.002181284916199702,
+      "confusion_matrix": {
+        "true_negative": 0,
+        "false_positive": 597,
+        "false_negative": 0,
+        "true_positive": 1996
+      }
+    },
+    "Standard Class": {
+      "n": 7853,
+      "prevalence": 0.37960015280784415,
+      "accuracy": 0.6207818668024958,
+      "precision": 0.6363636363636364,
+      "recall": 0.0023482053002348204,
+      "f1": 0.004679144385026738,
+      "roc_auc": 0.5365864969106475,
+      "brier": 0.23486269583246924,
+      "log_loss": 0.6625158767382359,
+      "expected_calibration_error_10_bins": 0.016385660749911775,
+      "confusion_matrix": {
+        "true_negative": 4868,
+        "false_positive": 4,
+        "false_negative": 2974,
+        "true_positive": 7
+      }
+    }
+  }
+}

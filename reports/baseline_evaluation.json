@@ -1,0 +1,168 @@
+{
+  "model_id": "dataco-nb-v1-fa6d022ed437",
+  "source": {
+    "url": "https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis",
+    "sha256": "fa6d022ed437155e1a2f0378710602848703c8a7f203f7ff5d77805bf8480aa6",
+    "filename": "DataCoSupplyChainDataset.csv"
+  },
+  "data_quality": {
+    "raw_rows": 180519,
+    "unique_order_ids": 65752,
+    "conflicting_orders_excluded": 0,
+    "usable_orders": 65752
+  },
+  "target": "Late_delivery_risk as recorded by DataCo, including recorded non-late outcomes",
+  "features": [
+    "Shipping Mode",
+    "Days for shipment (scheduled)",
+    "Order Region",
+    "Market",
+    "Customer Segment",
+    "Order Country"
+  ],
+  "split_method": "Order-level chronological 60/20/20 boundaries; 14-day gaps",
+  "split": {
+    "train": {
+      "orders": 38629,
+      "first_date": "2015-01-01",
+      "last_date": "2016-11-06"
+    },
+    "validation": {
+      "orders": 12322,
+      "first_date": "2016-11-21",
+      "last_date": "2017-06-24"
+    },
+    "test": {
+      "orders": 13202,
+      "first_date": "2017-07-09",
+      "last_date": "2018-01-31"
+    },
+    "gap_orders_excluded": 1599
+  },
+  "threshold": 0.5,
+  "excluded_predictors": [
+    "actual shipping days",
+    "shipping date",
+    "delivery status",
+    "order status",
+    "all personal fields",
+    "all identifiers"
+  ],
+  "limitations": [
+    "Retail logistics is not semiconductor logistics.",
+    "No supplier availability, chip shortage, causal, or production accuracy claim.",
+    "14-day split gaps are a label-availability assumption, not verified ingestion timestamps.",
+    "Final test set is untouched by fitting and calibration; repeated tuning would require a new holdout.",
+    "Probabilities can drift; conditional-independence assumptions are approximate."
+  ],
+  "test": {
+    "n": 13202,
+    "prevalence": 0.550295409786396,
+    "accuracy": 0.693001060445387,
+    "precision": 0.8482220294882914,
+    "recall": 0.5384721266345492,
+    "f1": 0.6587522101540794,
+    "roc_auc": 0.7342453179814991,
+    "brier": 0.1965505642645263,
+    "log_loss": 0.5709687734046883,
+    "expected_calibration_error_10_bins": 0.007672971773153834,
+    "confusion_matrix": {
+      "true_negative": 5237,
+      "false_positive": 700,
+      "false_negative": 3353,
+      "true_positive": 3912
+    }
+  },
+  "constant_baseline": {
+    "n": 13202,
+    "prevalence": 0.550295409786396,
+    "accuracy": 0.550295409786396,
+    "precision": 0.550295409786396,
+    "recall": 1.0,
+    "f1": 0.7099232911516099,
+    "roc_auc": 0.5,
+    "brier": 0.24747273321731061,
+    "log_loss": 0.6880841265624766,
+    "expected_calibration_error_10_bins": 0.0015367051863393604,
+    "confusion_matrix": {
+      "true_negative": 0,
+      "false_positive": 5937,
+      "false_negative": 0,
+      "true_positive": 7265
+    }
+  },
+  "by_shipping_mode": {
+    "First Class": {
+      "n": 2015,
+      "prevalence": 0.9493796526054591,
+      "accuracy": 0.9493796526054591,
+      "precision": 0.9493796526054591,
+      "recall": 1.0,
+      "f1": 0.9740325865580448,
+      "roc_auc": 0.5213810563430809,
+      "brier": 0.0480566764997994,
+      "log_loss": 0.20030659335597992,
+      "expected_calibration_error_10_bins": 0.00044597148371462427,
+      "confusion_matrix": {
+        "true_negative": 0,
+        "false_positive": 102,
+        "false_negative": 0,
+        "true_positive": 1913
+      }
+    },
+    "Same Day": {
+      "n": 741,
+      "prevalence": 0.5060728744939271,
+      "accuracy": 0.4939271255060729,
+      "precision": 0.5,
+      "recall": 0.0026666666666666666,
+      "f1": 0.005305039787798408,
+      "roc_auc": 0.47743533697632057,
+      "brier": 0.25375969393601144,
+      "log_loss": 0.7006950382074547,
+      "expected_calibration_error_10_bins": 0.06011429332447611,
+      "confusion_matrix": {
+        "true_negative": 365,
+        "false_positive": 1,
+        "false_negative": 374,
+        "true_positive": 1
+      }
+    },
+    "Second Class": {
+      "n": 2593,
+      "prevalence": 0.7697647512533745,
+      "accuracy": 0.7697647512533745,
+      "precision": 0.7697647512533745,
+      "recall": 1.0,
+      "f1": 0.8699062976683374,
+      "roc_auc": 0.502704739462174,
+      "brier": 0.17762443234271116,
+      "log_loss": 0.5406002268170224,
+      "expected_calibration_error_10_bins": 0.012255373841929876,
+      "confusion_matrix": {
+        "true_negative": 0,
+        "false_positive": 597,
+        "false_negative": 0,
+        "true_positive": 1996
+      }
+    },
+    "Standard Class": {
+      "n": 7853,
+      "prevalence": 0.37960015280784415,
+      "accuracy": 0.6206545269323825,
+      "precision": 1.0,
+      "recall": 0.0006709158000670916,
+      "f1": 0.0013409319477036541,
+      "roc_auc": 0.5130297026212537,
+      "brier": 0.23550366229493155,
+      "log_loss": 0.663863561623369,
+      "expected_calibration_error_10_bins": 0.014156076184482648,
+      "confusion_matrix": {
+        "true_negative": 4872,
+        "false_positive": 0,
+        "false_negative": 2979,
+        "true_positive": 2
+      }
+    }
+  }
+}

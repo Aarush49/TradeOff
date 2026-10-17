@@ -1,0 +1,66 @@
+{
+  "source": "SIMULATION ONLY \u2014 independent synthetic episodes, not real semiconductor outcomes",
+  "generated_at": "2026-10-17T20:42:39.716759+00:00",
+  "host": {
+    "system": "Darwin",
+    "architecture": "arm64"
+  },
+  "model_id": "shipment-synthetic-nb-v1-2a659ce55344",
+  "network": "Default synthetic network, independent of current run edits",
+  "episodes": 300,
+  "seed": 20261020,
+  "decision_time": "35% of nominal transit; same inputs and realized outcomes for all policies",
+  "policies": {
+    "eta_rule": {
+      "total_cost": 7498000,
+      "unmet": 61400,
+      "minimum_breaches": 69,
+      "factories_missing_deadline": 169,
+      "reserve_quantity": 51000,
+      "escalations": 0,
+      "mean_cost": 24993.333333333332,
+      "mean_reserve_quantity": 170.0
+    },
+    "facts_optimizer": {
+      "total_cost": 7767000,
+      "unmet": 75900,
+      "minimum_breaches": 69,
+      "factories_missing_deadline": 147,
+      "reserve_quantity": 51000,
+      "escalations": 0,
+      "mean_cost": 25890.0,
+      "mean_reserve_quantity": 170.0
+    },
+    "always_reserve": {
+      "total_cost": 5820000,
+      "unmet": 60000,
+      "minimum_breaches": 0,
+      "factories_missing_deadline": 300,
+      "reserve_quantity": 180000,
+      "escalations": 0,
+      "mean_cost": 19400.0,
+      "mean_reserve_quantity": 600.0
+    },
+    "ai_scenarios": {
+      "total_cost": 4081500,
+      "unmet": 22100,
+      "minimum_breaches": 0,
+      "factories_missing_deadline": 85,
+      "reserve_quantity": 123600,
+      "escalations": 0,
+      "mean_cost": 13605.0,
+      "mean_reserve_quantity": 412.0
+    }
+  },
+  "inference_and_planning_ms": {
+    "p50": 0.3661250000000227,
+    "p95": 0.4077499999999984
+  },
+  "timing_scope": "In-process forecasting plus candidate planning only; excludes event ingestion, SQLite, HTTP, and human review. Measured on the machine running this command, not automatically IBM Z.",
+  "accounting": "Committed purchases including late shipments plus unmet-demand penalties. Simulated reserve is an additional confirmed pool. No actual purchase orders.",
+  "limitations": [
+    "Generator assumptions can favor AI; these comparisons do not establish real-world benefit.",
+    "One decision time per episode; no sequential reservation fees or multi-stage production modeled.",
+    "An ETA rule, a reported-facts optimizer, always reserving, and AI scenario selection are measured separately."
+  ]
+}

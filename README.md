@@ -1,382 +1,272 @@
-# TradeOff — Privacy-Aware Supply Chain Coordination
+# TradeOff — event-driven supply decisions
 
-**Coordinate supply-chain decisions without requiring every participant to reveal all their sensitive business information.**
+An IBM Z Datathon prototype that processes shipment events, forecasts arrival
+risk, proposes constrained recovery allocations, and publishes a shared plan
+only after coordinator approval. The industrial workflow is a **clearly labeled
+simulation**, with a separate historical DataCo retail benchmark.
 
-TradeOff is an AI-assisted supply-chain coordination platform designed to help suppliers and factories respond to shortages, supplier disruptions, and competing resource demands. It combines optimization, controlled information sharing, and real-time replanning to find feasible recovery plans across multiple organizations.
+Python's standard library powers the server, models, optimizer and SQLite store.
+**No pip install, Node.js, C/C++ compiler, Rust toolchain, GPU or model API key is
+required.** Google OAuth is planned, not connected.
 
-> **Authority boundary:** OR-Tools is the sole authority for allocations, feasibility, costs, shortages, and benchmark metrics. The optional language-model layer can parse scenario instructions and explain solver results, but it never creates or changes an allocation.
+## Run on LinuxONE or locally
 
-Built for the **IBM Z Datathon at UT Dallas — October 17–18, 2026**.
-
-## The Problem
-
-Supply-chain disruptions often affect multiple organizations simultaneously. When a critical component becomes scarce, factories may compete for the same inventory while suppliers face capacity constraints and delivery deadlines.
-
-A centralized optimizer can find an efficient allocation, but it may require participants to share sensitive information, including:
-
-- Inventory levels and production capacity
-- Manufacturing costs and shortage penalties
-- Customer priorities and delivery commitments
-- Supplier availability and pricing
-
-Companies may be unwilling to reveal this information to competitors, even when coordination would benefit the entire supply chain.
-
-## Our Solution
-
-TradeOff allows multiple supply-chain participants to coordinate using approved information rather than automatically exposing their complete operational records.
-
-Each participant maintains its own operational data and communicates through a controlled coordination layer. An optimization engine evaluates available resources, competing demands, costs, and constraints to produce a feasible recovery plan.
-
-When conditions change, such as a supplier losing capacity, TradeOff can recalculate allocations and help participants respond to the disruption.
-
-### Key Features
-
-- **Multi-party coordination:** Model multiple factories and suppliers with independent requirements and constraints.
-- **Privacy-aware information exchange:** Limit shared information to approved fields and coordination messages.
-- **Constraint-based optimization:** Allocate scarce resources while respecting supply limits, production capacity, and delivery deadlines.
-- **Real-time replanning:** Recalculate a recovery plan when supply, demand, or delivery conditions change.
-- **Decision transparency:** Explain allocations, shortages, costs, and constraints affecting the selected plan.
-- **Auditable decisions:** Record coordination messages, optimization results, and allocation changes.
-- **Benchmarking:** Compare coordinated decisions against a full-information centralized baseline.
-
-## Example Scenario
-
-Imagine two electronics factories competing for semiconductor chips.
-
-| Participant | Requirement |
-|---|---:|
-| Factory A | 600 chips |
-| Factory B | 500 chips |
-| Primary supplier | 800 chips available |
-| Alternative supplier | Up to 300 additional chips |
-
-The total demand is 1,100 chips, exceeding the primary supplier's capacity by 300 chips.
-
-TradeOff evaluates the available supply, alternative sourcing costs, deadlines, and shortage penalties to determine an allocation that minimizes the agreed network-wide cost while respecting the model's constraints.
-
-During the demonstration, a supplier disruption can reduce available capacity. TradeOff then recalculates the allocation and compares the new plan with the original plan.
-
-*These quantities are illustrative inputs. Actual allocations and cost improvements must be calculated and measured by the implementation.*
-
-## How It Works
-
-1. **Participant setup:** Factories and suppliers enter their operational requirements and constraints.
-2. **Controlled information exchange:** Each participant submits approved requests, offers, quantities, or feasibility information.
-3. **Optimization:** The coordination engine calculates an allocation that satisfies the modeled constraints and minimizes total cost.
-4. **Local validation:** Participant agents check whether proposed allocations satisfy their own requirements.
-5. **Replanning:** If a disruption or constraint violation occurs, the system updates the plan.
-6. **Audit and evaluation:** The system records decisions and compares results against baseline approaches.
-
-## Architecture
-
-```text
- Factory A Agent       Factory B Agent       Supplier Agent
-       |                      |                     |
-       +----------------------+---------------------+
-                              |
-                 FastAPI Coordination API
-                              |
-               OR-Tools CP-SAT Engine
-          (multi-period, component, MOQ, batch)
-                              |
-                  SQLAlchemy / SQLite
-                              |
-             RBAC, Disclosure & Audit Layer
-                              |
-               REST-only Streamlit UI
-```
-
-The initial prototype may use a central optimization engine that receives limited participant messages. This provides a practical starting point for demonstrating controlled information sharing.
-
-A future extension could use distributed optimization so participants solve local problems and exchange coordination variables instead of sending their approved inputs to a central solver.
-
-## Technology Stack
-
-| Technology | Purpose |
-|---|---|
-| Python | Core application and optimization logic |
-| FastAPI | Backend API and participant communication |
-| Google OR-Tools CP-SAT | Authoritative mathematical optimization |
-| Streamlit | Interactive demonstration dashboard |
-| SQLAlchemy + SQLite | Operational records, isolated private data, plans, and audit history |
-| OpenAI Responses API (optional) | Structured scenario parsing and downstream explanations only |
-| IBM Z / LinuxONE capabilities | Potential enterprise deployment and security integration, depending on event access |
-
-The architecture is intended to remain portable so the prototype can run locally and be adapted to an IBM Z environment when available.
-
-## Evaluation
-
-TradeOff will be evaluated against a centralized, full-information optimization baseline.
-
-| Metric | Purpose |
-|---|---|
-| Feasibility rate | Measures how often generated plans satisfy all hard constraints |
-| Total network cost | Measures the modeled cost of the recovery plan |
-| Optimality gap | Measures the difference from the centralized benchmark when comparable |
-| Information disclosed | Tracks the fields or values exchanged by participants |
-| Replanning time | Measures response time after a disruption |
-| Access-control tests | Checks whether participants can access restricted records |
-
-The goal is to determine whether TradeOff can produce useful, feasible recovery plans while reducing unnecessary information disclosure.
-
-Results will be reported from actual experiments rather than assumed in advance.
-
-## Privacy and Security
-
-TradeOff is designed around controlled information exchange and participant-level access restrictions.
-
-The prototype will distinguish between:
-
-- Private operational data retained by a participant
-- Approved information exchanged during coordination
-- Shared allocation results
-- Audit records available to authorized users
-
-**Important limitation:** Controlled information sharing and application access controls do not, by themselves, provide cryptographic privacy guarantees. A central optimizer may still infer sensitive information from the values it receives.
-
-Cryptographic techniques or genuinely distributed optimization would be required to strengthen privacy guarantees beyond the prototype's access-control model.
-
-## Getting Started
-
-### Prerequisites
-
-- Python 3.11 or a compatible version
-- pip
-- Git
-
-### Installation
-
-Clone the repository:
+Use Python 3.10 or newer with its standard `sqlite3` module. Extract the deployment
+ZIP, enter its `TradeOff` folder, then run:
 
 ```bash
-git clone <YOUR_REPOSITORY_URL>
-cd TradeOff
+python3 server.py
 ```
 
-Create and activate a virtual environment:
-
-**macOS / Linux**
+Open http://localhost:8501 locally. For a remote VM, keep that server running and
+run this on your own computer, replacing USER and HOST:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
+ssh -N -L 8501:127.0.0.1:8501 USER@HOST
 ```
 
-**Windows**
+Open http://localhost:8501 on your computer. Stop the server/tunnel with Ctrl+C.
+`python3 app.py` also works. Options: `--port 8502` and `--db /path/to/state.sqlite3`.
+The default database is `runtime/tradeoff.sqlite3`; data survives a server restart.
+Use the same folder/database when restarting. The built-in server is for a local
+SSH-tunneled prototype, not a public production service.
+
+## Demonstrate the real-time decision loop
+
+1. Sign in as **Network_Coordinator** using its generated password.
+2. In **Critical supply decision desk**, choose **Gradual congestion** and click
+   **Start new replay**. This archives the previous run and starts a new one.
+3. Four checkpoint events arrive every five seconds. The background server worker
+   updates shared state, scores primary-shipment risk, and creates a proposal.
+   The browser polls every two seconds; it does not drive event production.
+4. The stream pauses before revealing the outcome. Open candidate scenarios,
+   then click **Review this revision** to inspect the proposed shipment table.
+5. **Approve proposed allocation** or **Reject proposal**. Only approval replaces
+   the shared plan. A newer event invalidates older pending proposals/reviews.
+6. Sign in as **Factory_A** in another browser profile, or sign out and change accounts.
+   It sees its assigned shipments from the same approved plan.
+7. Return to the coordinator and **Reveal simulated outcome**. See realized cost,
+   unmet demand and minimum breaches. Compare with a run where no plan is approved.
+8. Inspect the event ledger, processing measurements, policy comparison, and audit
+   export. **New blank run** supports manually submitted demo updates.
+
+[DEMO_SCRIPT.md](DEMO_SCRIPT.md) gives a three-minute pitch sequence.
+
+The live network starts with A demand 600/day-2/minimum 400, B demand 500/day-4,
+S supply 800/day-1/$5, and T normal supply 300/day-3/$12. A separate confirmed
+**synthetic** T reserve pool has 600/day-2/$18. The initial allocation costs $7,600
+and uses no reserve. Backup stock is an explicit scenario assumption, not an
+inference from CSET or verified real-world availability.
+
+The **Historical model & allocation sandbox** is separate. Its sliders do not
+publish live state. To change shared state, use **Submit a demo event**.
+
+## Shared state, approval and audit
+
+SQLite transactions store scenario state, events, proposals, approvals/rejections,
+and outcomes. A single approved plan replaces prior reservations; approval does
+not add duplicate orders or transmit real purchases. New replay/blank runs archive
+previous records rather than delete them. Audit export contains the latest 200
+records per collection, including candidate plans and input snapshots; the database
+retains older records. Coordinator exports include all submitted network signals.
+
+Identical event-ID retries are deduplicated. Reusing an ID for a different payload
+returns 409. Out-of-order event time or simulation clock changes are logged and
+ignored. Events for an old run are rejected. A model failure rolls back the event
+and state change together. A replay step includes its expected cursor, preventing
+a stale click from unintentionally advancing to the outcome.
+
+Only the current run/revision can be approved. Proposal IDs and revisions are
+checked in a transaction. Repeated identical decisions are idempotent. A primary
+checkpoint older than 120 wall-clock seconds blocks approval: submit a fresh
+checkpoint or start a new run. Rejection retains the previous approved plan.
+If no candidate meets policy, the result is an escalation with no approval option.
+
+## Two distinct machine-learning models
+
+| Model | Training data | Purpose |
+| --- | --- | --- |
+| Shipment arrival model | 3,000 generated shipment episodes; separate 750-episode validation and 750-episode test sets | Predict a distribution of 0/1/2/4 days of additional primary-shipment delay from changing checkpoint signals. |
+| Historical DataCo v2 | 65,752 historical retail orders, grouped and chronologically split | Demonstrate an order-time delivery-risk baseline; not used to set live chip-shipment probabilities. |
+
+The new model is multiclass categorical Naive Bayes with Laplace smoothing and
+validation temperature scaling. Features bucket reported ETA deviation, checkpoint
+age, backlog, route condition and transit-progress lag. Its entire shipment episode
+stays in one split. Final delivery outcomes never enter earlier prediction inputs.
+Scenarios already in the past are removed. Observations beyond the modeled horizon
+escalate instead of producing unsupported low-risk estimates.
+
+It achieved 71.9% multiclass accuracy on **synthetic** test observations. This is
+not real semiconductor accuracy and cannot be compared with DataCo's 69.6% binary
+accuracy. Generator assumptions may favor the learned model. There is no online
+retraining; event-triggered inference uses a fixed, versioned model.
+
+The allocation layer generates deterministic candidate plans and compares expected
+cost across arrival scenarios. It excludes candidates with modeled probability
+above 10% of any hard-minimum breach, then picks the cheapest eligible candidate.
+This is a predefined illustrative policy, **not a production risk standard or a
+guarantee**. It is candidate enumeration, not global stochastic optimization.
+Committed purchases are charged even if late; unmet chips incur supplied penalties.
+
+See [REALTIME_MODEL_CARD.md](REALTIME_MODEL_CARD.md) for the simulation model and
+policy, and [MODEL_CARD.md](MODEL_CARD.md) for the historical DataCo model.
+
+## Measure decisions and latency
+
+The dashboard's **Run 300-episode comparison on this server** measures an ETA rule,
+a reported-facts optimizer, always reserving backup, and AI scenario planning.
+All policies see the same observations and realized synthetic outcomes. It uses
+the fixed standard scenario, not edits to the current run. Reported outcomes
+include mean cost, unmet chips, hard-minimum breaches and reserve consumption.
+The result states the actual server OS/architecture and generation time.
+
+Two timing scopes are kept separate:
+
+- Live p50/p95: server processing through core SQLite commit; excludes HTTP,
+  browser polling, human review and the final metric write. Delivery-only events
+  are excluded from event-to-proposal samples.
+- Policy comparison p50/p95: in-process model inference plus candidate planning;
+  excludes event ingestion, SQLite, HTTP and human review.
+
+Bundled measurements were taken on macOS/arm64. Run the comparison on your LinuxONE
+instance for its measurements. No hardware acceleration, high availability,
+throughput target, or end-to-end latency target is claimed from local tests.
+
+## Password accounts and Google OAuth
+
+The first server start creates five local accounts: `Network_Coordinator`,
+`Factory_A`, `Factory_B`, `Supplier_S`, and `Supplier_T`. Each receives a different
+random password. Read them on the server:
 
 ```bash
-python -m venv .venv
-.venv\Scripts\activate
+cat runtime/accounts-initial-credentials.txt
 ```
 
-Install dependencies:
+Save the passwords privately, then delete that initial credentials file. It is
+created with owner-only permissions and excluded from the deployment ZIP, along
+with the account database. Existing accounts are never reset by restarting.
+Passwords are stored as individually salted PBKDF2-HMAC-SHA256 hashes with 600,000
+iterations in `runtime/accounts.sqlite3`. No password is embedded in the application.
+To choose your own password, use the hidden terminal prompts:
 
 ```bash
-pip install -r requirements.txt
+python3 manage_users.py reset-password Network_Coordinator
+python3 manage_users.py create-user Another_Coordinator --workspace Coordinator
 ```
 
-### Running the Application
+`python3 manage_users.py init` can provision accounts before starting the server.
+Use `--auth-db /path/to/accounts.sqlite3` before the management command when using
+a custom account database; the server accepts the same option.
 
-Start the API:
+Workspace membership is assigned on the server. Coordinator accounts review and
+approve proposals, control replay, export audits, and run benchmarks. Suppliers
+and factories access their own inputs and approved assignments. A login payload
+cannot choose a different role. Failed sign-ins are limited to ten per source
+address in five minutes. Sessions use random HttpOnly/SameSite cookies, expire
+after eight hours, and end on restart, logout, or password reset. Google OAuth
+is still planned. Continue using the localhost server through an SSH tunnel.
 
-```bash
-uvicorn backend.main:app --reload
-```
+## Event/API integration
 
-In a separate terminal, start the dashboard:
+The ingestion boundary accepts timestamped JSON, so a future feed adapter can
+post updates instead of the replay worker. No live ERP, sensor, supplier, IBM MQ,
+or Kafka connection has been configured. External test events must use source
+`external_demo`; browser events use `manual_demo`; `simulation_replay` is internal.
 
-```bash
-streamlit run frontend/app.py
-```
+All `/api/live/` endpoints require a password-authenticated session. Login accepts
+`{"username":"Network_Coordinator","password":"YOUR_PASSWORD"}` at `POST /api/login`.
+Keep the returned session cookie for subsequent requests. The browser does this
+without storing your password.
 
-Open `http://localhost:8501` to use the coordination control room. API documentation is available at `http://localhost:8000/docs`.
-
-Run the automated unit, integration, solver, LLM-fallback, and privacy checks with:
-
-```bash
-python -m pytest
-```
-
-## Configuration
-
-| Variable | Default | Used by |
-|---|---|---|
-| `TRADEOFF_DATABASE_URL` | Local SQLite database | Backend |
-| `TRADEOFF_COORDINATOR_KEY` | `coordinator-demo-key` | Backend |
-| `TRADEOFF_AUDITOR_KEY` | `auditor-demo-key` | Backend |
-| `FACTORY_A_AGENT_KEY` | `factory-a-demo-key` | Backend |
-| `FACTORY_B_AGENT_KEY` | `factory-b-demo-key` | Backend |
-| `SUPPLIER_PRIMARY_AGENT_KEY` | `supplier-primary-demo-key` | Backend |
-| `SUPPLIER_ALT_AGENT_KEY` | `supplier-alt-demo-key` | Backend |
-| `TRADEOFF_API_URL` | `http://127.0.0.1:8000` | Frontend |
-| `TRADEOFF_API_KEY` | `coordinator-demo-key` | Frontend |
-| `TRADEOFF_ENABLE_LLM` | `0` | Backend |
-| `OPENAI_API_KEY` | Not set | Backend |
-| `OPENAI_MODEL` | `gpt-6-astra` | Backend |
-
-All protected API requests must include an `X-API-Key` header. The included keys are demonstration credentials only; replace them with managed secrets and production authentication before deployment.
-
-The LLM layer is disabled by default. To enable structured OpenAI reporting and scenario parsing, set `OPENAI_API_KEY`, optionally set `OPENAI_MODEL`, and set `TRADEOFF_ENABLE_LLM=1`. Solver outputs remain authoritative and immutable whether the LLM layer is enabled or not.
-
-If the LLM is disabled or unavailable, TradeOff uses deterministic parsing and report templates so optimization and disruption workflows continue to work without an external model.
-
-## API Reference
-
-Interactive OpenAPI documentation is available at `http://localhost:8000/docs` while the backend is running.
-
-| Method | Path | Access | Purpose |
-|---|---|---|---|
-| `GET` | `/health` | Public | Confirm API, optimizer, and database availability |
-| `POST` | `/scenarios` | Coordinator | Create a default or custom scenario; an existing supplied ID is loaded |
-| `GET` | `/scenarios/{scenario_id}` | Any authenticated principal | Retrieve scenario inputs and status |
-| `GET` | `/participants` | Any authenticated principal | List registered participant profiles |
-| `GET` | `/participants/{participant_id}/private-data` | Owning participant or coordinator | Read participant-isolated private fields and audit the attempt |
-| `POST` | `/optimize` | Coordinator | Run all four strategies, persist the privacy-aware plan, and log disclosures |
-| `POST` | `/disrupt` | Coordinator | Apply a preset, structured, or natural-language disruption and re-optimize |
-| `GET` | `/audit-log` | Coordinator or auditor | Retrieve disclosure and authorization audit records |
-| `GET` | `/plans/{plan_id}/participant-summary` | Factory owner or coordinator | Return a privacy-filtered explanation of a persisted plan |
-
-### Create a scenario
-
-An empty body loads the built-in two-factory, two-supplier semiconductor scenario:
-
-```bash
-curl -X POST http://127.0.0.1:8000/scenarios \
-  -H "X-API-Key: coordinator-demo-key" \
-  -H "Content-Type: application/json" \
-  -d '{}'
-```
-
-A custom request accepts `id`, `name`, `start_date`, `horizon_periods`, `supplies`, and `demands`. Supply rows support component, period, capacity, unit cost, lead time, MOQ, and batch size. Demand rows support component, period, requested quantity, deadline, shortage penalty, and priority score.
-
-### Optimize a scenario
+Example event schema (use the current run ID and a fresh timezone-qualified ISO
+timestamp; simulation hour must not move backward):
 
 ```json
-POST /optimize
 {
-  "scenario_id": "<scenario-id>"
+  "event_id": "unique-checkpoint-001",
+  "run_id": "CURRENT_RUN_ID",
+  "occurred_at": "CURRENT_ISO_TIMESTAMP",
+  "simulation_hour": 12,
+  "source": "external_demo",
+  "type": "shipment_update",
+  "entity": "Supplier S",
+  "changes": {
+    "reported_eta_day": 3,
+    "checkpoint_age_hours": 12,
+    "backlog_ratio": 1.1,
+    "route_status": "congestion",
+    "progress": 0.2
+  }
 }
 ```
 
-The response contains the persisted `plan_id`, `llm_used`, and a consolidated benchmark report. Every strategy reports total network cost, unmet demand, optimality gap, disclosed-field count, solve time, allocations, and shortages.
+Send it with `POST /api/live/events`. Supply-pool updates use `inventory_update`
+and capacity/arrival/unit_cost. Factory updates use `demand_update` and
+quantity/deadline/minimum/penalty. Changes are type/range validated. A delivery
+outcome is a separate `delivery` event and cannot reveal a future arrival.
+Primary prediction applies to S only; backup pools are assumed confirmed.
+Manual events pause an active replay. Don't mix independent clocks in a run.
 
-### Apply a disruption
+| Endpoint | Method | Purpose |
+| --- | --- | --- |
+| `/api/live/state` | GET | Shared scenario/proposals for coordinator; scoped approved plan for participants. |
+| `/api/live/events` | POST | Validate, store, score and propose; event-ID idempotency. |
+| `/api/live/decision` | POST | Coordinator `{proposal_id, revision, decision: "approve" or "reject", note}`. |
+| `/api/live/replay` | POST | Start `{action:"start",run_id,revision,scenario,interval_seconds}`; pause/resume `{action,run_id}`; step `{action:"step",run_id,index}`. |
+| `/api/live/reset` | POST | New blank run `{run_id,revision}`; retain history. |
+| `/api/live/metrics` | GET | Current-run counters, p50/p95 and revealed outcome. |
+| `/api/live/audit` | GET | Coordinator action/event/proposal export with snapshots. |
+| `/api/live/model` | GET | Simulation model metadata and evaluation. |
+| `/api/live/benchmark` | GET / POST | Read the latest report, or run `{episodes:300}` (10–1000). |
 
-Use the demonstration preset:
+Older `/api/model`, `/api/context`, `/api/risk`, `/api/analyze` and `/api/solve`
+remain for the separate historical/sandbox functions. Participant `/api/solve`
+now returns the shared approved plan. Missing model artifacts never produce fake
+predictions. Unauthenticated requests return 401, wrong-workspace requests 403,
+and stale/conflicting writes 409.
 
-```json
-POST /disrupt
-{
-  "scenario_id": "<scenario-id>",
-  "preset": "PRIMARY_CAPACITY_LOSS_40"
-}
+## Reproduce and test
+
+The ZIP includes trained JSON artifacts and requires no dataset downloads to run.
+
+```bash
+python3 shipment_model.py
+python3 benchmark_live.py --episodes 300
+python3 -m unittest discover -s tests -v
 ```
 
-The preset reduces the primary supplier's period-2 capacity by 40%. Structured requests can instead provide `supplier_id`, `capacity_loss_percent`, and `period`. Natural-language requests can provide text such as `Simulate primary supplier losing 50% capacity on day 2` in `natural_language`; this is parsed into the same structured override before the solver runs.
+To rebuild the separate historical models/context:
 
-Disruption changes the selected scenario's stored capacity and status, records the action, and immediately creates a new optimization plan. Create a fresh scenario to repeat the demo from its original baseline.
-
-## Database and Privacy Model
-
-SQLite persistence is managed through SQLAlchemy. The application creates the schema and seeds demonstration participants on backend startup.
-
-| Table | Important fields |
-|---|---|
-| `participants` | `id`, `name`, `type`, `role` |
-| `private_data` | `participant_id`, `field_name`, `field_value_encrypted_or_isolated` |
-| `scenarios` | `id`, `name`, `status`, `start_date`, `horizon_periods` |
-| `supply_nodes` | Scenario/supplier IDs, component, period, capacity, unit cost, lead time, MOQ, batch size |
-| `demand_nodes` | Scenario/factory IDs, component, period, quantity, deadline, shortage penalty, priority score |
-| `allocation_plans` | Scenario ID, timestamp, cost, gap, strategy, benchmark report |
-| `allocation_details` | Plan/factory/supplier IDs, component, quantity, ship period, delivery date |
-| `audit_logs` | Plan, accessor, target, disclosed fields, action, timestamp |
-
-Private records such as factory production costs, customer contracts, and supplier local margins are stored separately by participant. A participant API key can read only its own private rows; cross-participant access returns `403 Forbidden` and the denied attempt is audited. Coordinators can run optimization and auditors can inspect audit history, while participant-specific plan summaries return only the requesting factory's operational changes.
-
-During optimization, only the explicitly approved coordination fields are logged as disclosures. Tests assert the exact disclosed field names for each factory and supplier rather than only counting audit events.
-
-## Optimization and Benchmarks
-
-The OR-Tools CP-SAT engine models multiple components and periods. It enforces supplier inventory balance over time, capacity, batch-size multiples, minimum order quantities, component matching, and delivery feasibility after lane lead time. Unmet demand is represented explicitly and penalized in the objective.
-
-Each optimization request evaluates four strategies against the same scenario:
-
-1. **Full Information Optimum** — centralized mathematical baseline using complete modeled cost information.
-2. **Privacy-Aware TradeOff Coordination** — the persisted recommendation using approved coordination data.
-3. **First-Come, First-Served (FCFS)** — sequential heuristic ordered by demand arrival.
-4. **Priority-Only Allocation** — greedy heuristic ordered by participant priority.
-
-The full-information optimum is the cost reference used to calculate optimality gaps. Heuristic results are comparisons only; they cannot override the authoritative privacy-aware mathematical plan.
-
-## LLM Responsibilities
-
-The optional reporting layer is limited to four downstream tasks:
-
-- Explain allocation changes between the previous and current solver plans.
-- Summarize disruption impacts and network cost changes for executives.
-- Parse natural-language disruption instructions into validated structured fields.
-- Produce participant-specific summaries without exposing competitor internals.
-
-The LLM receives solver results or scenario-control text. It does not receive authority to invent allocations, relax constraints, calculate benchmark metrics, or write plan details.
-
-## End-to-End Demo
-
-1. Start FastAPI and Streamlit using the commands above.
-2. Open `http://localhost:8501` and create the baseline two-factory, two-supplier scenario.
-3. Run the initial optimization and compare cost, unmet demand, gap, disclosures, and allocations across all four strategies.
-4. Apply **Primary Supplier Capacity Loss -40%** or enter a natural-language disruption.
-5. Review the recalculated plan, allocation delta, executive explanation, and participant-specific effects.
-6. Inspect the audit view to verify the disruption event and every field disclosed during optimization.
-7. Optionally call a private-data endpoint with another participant's key and confirm the request returns `403` and is recorded as `PRIVATE_ACCESS_DENIED`.
-
-## Project Structure
-
-```text
-TradeOff/
-├── backend/
-│   ├── main.py              # FastAPI entry point and REST endpoints
-│   ├── auth.py              # API-key RBAC boundary
-│   ├── database/            # SQLAlchemy models and session lifecycle
-│   ├── engine/              # OR-Tools solver and benchmark strategies
-│   └── services/            # Scenario orchestration and LLM-only reporting
-├── frontend/
-│   ├── app.py               # Streamlit operations console
-│   └── api_client.py        # REST-only backend client
-├── tests/
-│   ├── test_solver.py
-│   ├── test_end_to_end.py
-│   ├── test_privacy_security.py
-│   └── test_llm_explainer.py
-├── requirements.txt
-├── .gitignore
-└── README.md
+```bash
+python3 fetch_data.py
+python3 train_model.py --output models/baseline_delivery_risk.json --report reports/baseline_evaluation.json
+python3 improve_model.py
+python3 dataset_context.py
 ```
 
-## Roadmap
+DataCo raw data is downloaded from its public Kaggle dataset; if that endpoint
+requires login, manually place `DataCoSupplyChainDataset.csv` in `data/raw/`.
+Raw files and runtime databases are ignored by Git and excluded from deployment.
+The optional notebook can run in an existing Jupyter environment; it is not needed
+by the dashboard. Training and inference have been tested locally, not on your
+assigned s390x host. Any ONNX/Telum/watsonx integration remains future work.
 
-- [x] Create the factory and supplier scenario
-- [x] Implement the centralized optimization baseline
-- [x] Add participant agents and approved message schemas
-- [x] Enforce participant-level access controls
-- [x] Implement allocation feasibility validation
-- [x] Build the interactive dashboard
-- [x] Add supplier disruption and demand spike simulations
-- [x] Record information exchange and decision history
-- [x] Compare cost, feasibility, and runtime against the baseline
-- [ ] Investigate distributed optimization
-- [ ] Demonstrate IBM Z integration if the required environment is available
+## Dataset provenance
 
-## Future Improvements
+- [DataCo](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis): historical retail delivery model; excluded post-delivery fields, identities and credentials. V2 historical test accuracy 69.6%, ROC AUC 0.746, recall 56.7%; comparison with v1 is retrospective.
+- [CSET Chip Explorer](https://github.com/georgetown-cset/eto-chip-explorer/tree/main/data): source-linked geography shares and semiconductor relationships, not outage labels or usable capacities. Its application snapshot differs from its official release; aggregate geography buckets are not single countries.
+- [SMAT2022](https://github.com/kwoo-lee/SMAT2022): LVHM_E static factory/AMHS topology; no Windows simulator or production-outcome labels are used.
 
-Potential extensions include distributed optimization, stronger privacy-preserving computation, richer supplier networks, uncertainty-aware planning, and integration with enterprise supply-chain data systems.
+There is no verified record-level join between those sources. Original source
+terms remain with their publishers. Source hashes are in `models/dataset_context.json`.
+The live model's generated episodes are a fourth, explicitly synthetic source.
 
-## Team
+## Readable audit report
 
-Developed for the IBM Z Datathon at UT Dallas.
-
-**Project:** TradeOff  
-**Focus:** AI-assisted supply-chain optimization, coordination, and controlled information exchange.
-
-## License
-
-Choose an appropriate license before making the project publicly available.
+Choose **View decision audit** in the decision desk to open the coordinator report.
+It includes the current outcome and cost breakdown, approved shipments, a timeline,
+expandable AI recommendations, and reported event changes. Select a run to inspect
+retained records from previous runs. The snapshot contains up to 200 records per
+collection across all runs; complete outcome summaries cover the current run.
+Use **Print / Save as PDF** to share a readable report or download its source JSON.
+The report uses the same coordinator permissions as the audit API.

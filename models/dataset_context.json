@@ -1,0 +1,4136 @@
+{
+  "cset": {
+    "source": "https://github.com/georgetown-cset/eto-chip-explorer/tree/main/data",
+    "provider_records": 396,
+    "provision_records": 1300,
+    "inputs": 126,
+    "upstream_relationships": 139,
+    "country_exposure": [
+      {
+        "input_id": "N21",
+        "input": "ArF dry (DUV) lithography tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "NLD",
+            "reported_share_percent": 94.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 5.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 94.4
+      },
+      {
+        "input_id": "N22",
+        "input": "ArF immersion (DUV) lithography tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "NLD",
+            "reported_share_percent": 99.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 0.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 99.3
+      },
+      {
+        "input_id": "N70",
+        "input": "Assembly inspection tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 65.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "SGP",
+            "reported_share_percent": 22.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 5.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 4.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 1.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 1.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 99.99999999999999,
+        "largest_individual_country_share_percent": 65.3
+      },
+      {
+        "input_id": "S3",
+        "input": "Assembly, testing, and packaging (ATP)",
+        "year": 2022,
+        "countries": [
+          {
+            "country": "CHN",
+            "reported_share_percent": 30.0,
+            "source": "",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 28.0,
+            "source": "",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 20.0,
+            "source": "",
+            "aggregate_geography": true
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 9.0,
+            "source": "",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 6.0,
+            "source": "",
+            "aggregate_geography": false
+          },
+          {
+            "country": "EUR",
+            "reported_share_percent": 3.0,
+            "source": "",
+            "aggregate_geography": true
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 3.0,
+            "source": "",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 99.0,
+        "largest_individual_country_share_percent": 30.0
+      },
+      {
+        "input_id": "N41",
+        "input": "Atomic layer deposition tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "NLD",
+            "reported_share_percent": 54.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 23.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 14.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 4.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 2.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "GBR",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.1,
+        "largest_individual_country_share_percent": 54.5
+      },
+      {
+        "input_id": "N134",
+        "input": "Auto ball bonders for IC",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "SGP",
+            "reported_share_percent": 90.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 7.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 0.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 0.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 0.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 99.9,
+        "largest_individual_country_share_percent": 90.9
+      },
+      {
+        "input_id": "N135",
+        "input": "Auto ball bonders for non-IC",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "SGP",
+            "reported_share_percent": 86.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 10.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 3.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 86.5
+      },
+      {
+        "input_id": "N136",
+        "input": "Automatic wedge bonders",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "SGP",
+            "reported_share_percent": 83.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 14.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 0.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 0.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "BLR",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 83.7
+      },
+      {
+        "input_id": "N72",
+        "input": "Bonding tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "SGP",
+            "reported_share_percent": 38.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 21.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "NLD",
+            "reported_share_percent": 18.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 12.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 3.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 1.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 1.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "SWE",
+            "reported_share_percent": 0.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 0.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "BLR",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.10000000000001,
+        "largest_individual_country_share_percent": 38.6
+      },
+      {
+        "input_id": "N81",
+        "input": "Burn-in test tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "KOR",
+            "reported_share_percent": 61.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 15.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 8.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 7.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "ITA",
+            "reported_share_percent": 3.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 3.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 61.4
+      },
+      {
+        "input_id": "N86",
+        "input": "CMP tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 49.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 36.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 12.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 1.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 49.0
+      },
+      {
+        "input_id": "N124",
+        "input": "CMP tools (adv. pkg.)",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 71.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 15.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 13.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 71.5
+      },
+      {
+        "input_id": "N110",
+        "input": "CVD tools (adv. pkg.)",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 74.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 14.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 6.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "NLD",
+            "reported_share_percent": 2.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "GBR",
+            "reported_share_percent": 1.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 99.89999999999999,
+        "largest_individual_country_share_percent": 74.3
+      },
+      {
+        "input_id": "N47",
+        "input": "Chemical vapor deposition tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 75.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 8.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 6.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 5.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "NLD",
+            "reported_share_percent": 3.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "GBR",
+            "reported_share_percent": 0.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 99.99999999999999,
+        "largest_individual_country_share_percent": 75.8
+      },
+      {
+        "input_id": "N50",
+        "input": "Conductor etching tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 82.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 9.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 6.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 1.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 82.4
+      },
+      {
+        "input_id": "N85",
+        "input": "Core intellectual property",
+        "year": 2019,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 52.0,
+            "source": "[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)",
+            "aggregate_geography": false
+          },
+          {
+            "country": "GBR",
+            "reported_share_percent": 43.0,
+            "source": "[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 2.0,
+            "source": "[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 2.0,
+            "source": "[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)",
+            "aggregate_geography": true
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 1.0,
+            "source": "[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 52.0
+      },
+      {
+        "input_id": "N66",
+        "input": "Critical dimensions metrology tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 72.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 27.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 0.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 100.1,
+        "largest_individual_country_share_percent": 72.1
+      },
+      {
+        "input_id": "N8",
+        "input": "Crystal growing furnaces",
+        "year": 2022,
+        "countries": [
+          {
+            "country": "DEU",
+            "reported_share_percent": 100.0,
+            "source": "CSET analysis of TechInsights data (2022). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 100.0
+      },
+      {
+        "input_id": "N9",
+        "input": "Crystal machining tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 99.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 99.7
+      },
+      {
+        "input_id": "N13",
+        "input": "DAO chip design",
+        "year": 2022,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 41.0,
+            "source": "Worldwide semiconductor sales for discrete, analog, sensor, and optoelectronic product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 18.0,
+            "source": "Worldwide semiconductor sales for discrete, analog, sensor, and optoelectronic product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).",
+            "aggregate_geography": false
+          },
+          {
+            "country": "EUR",
+            "reported_share_percent": 17.0,
+            "source": "Worldwide semiconductor sales for discrete, analog, sensor, and optoelectronic product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).",
+            "aggregate_geography": true
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 9.0,
+            "source": "Worldwide semiconductor sales for discrete, analog, sensor, and optoelectronic product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 6.0,
+            "source": "Worldwide semiconductor sales for discrete, analog, sensor, and optoelectronic product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).",
+            "aggregate_geography": true
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 5.0,
+            "source": "Worldwide semiconductor sales for discrete, analog, sensor, and optoelectronic product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 4.0,
+            "source": "Worldwide semiconductor sales for discrete, analog, sensor, and optoelectronic product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 41.0
+      },
+      {
+        "input_id": "N67",
+        "input": "Defect inspection tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 91.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "ISR",
+            "reported_share_percent": 3.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 2.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 0.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 0.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 99.89999999999999,
+        "largest_individual_country_share_percent": 91.9
+      },
+      {
+        "input_id": "N116",
+        "input": "Defect review stations",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 95.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 4.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 95.2
+      },
+      {
+        "input_id": "N36",
+        "input": "Deposition tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 60.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 14.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "NLD",
+            "reported_share_percent": 10.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 9.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 3.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 1.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHE",
+            "reported_share_percent": 0.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "FRA",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "GBR",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 0.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.09999999999998,
+        "largest_individual_country_share_percent": 60.3
+      },
+      {
+        "input_id": "N128",
+        "input": "Deposition tools (adv. pkg.)",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 84.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 5.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 4.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "SGP",
+            "reported_share_percent": 2.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHE",
+            "reported_share_percent": 0.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 0.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "NLD",
+            "reported_share_percent": 0.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "GBR",
+            "reported_share_percent": 0.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.1,
+        "largest_individual_country_share_percent": 84.6
+      },
+      {
+        "input_id": "S1",
+        "input": "Design",
+        "year": 2022,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 51.0,
+            "source": "",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 13.0,
+            "source": "",
+            "aggregate_geography": false
+          },
+          {
+            "country": "EUR",
+            "reported_share_percent": 10.0,
+            "source": "",
+            "aggregate_geography": true
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 9.0,
+            "source": "",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 8.0,
+            "source": "",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 6.0,
+            "source": "",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 4.0,
+            "source": "",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 101.0,
+        "largest_individual_country_share_percent": 51.0
+      },
+      {
+        "input_id": "N71",
+        "input": "Dicing tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 95.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "SGP",
+            "reported_share_percent": 2.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 0.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 0.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 0.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "BLR",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 99.99999999999999,
+        "largest_individual_country_share_percent": 95.0
+      },
+      {
+        "input_id": "N73",
+        "input": "Die attaching tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "KOR",
+            "reported_share_percent": 31.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "NLD",
+            "reported_share_percent": 28.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "SGP",
+            "reported_share_percent": 23.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 12.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 2.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 0.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "BLR",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 31.7
+      },
+      {
+        "input_id": "N131",
+        "input": "Die attaching tools for IC",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "KOR",
+            "reported_share_percent": 38.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "NLD",
+            "reported_share_percent": 26.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "SGP",
+            "reported_share_percent": 20.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 12.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 0.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 0.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "BLR",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 99.99999999999999,
+        "largest_individual_country_share_percent": 38.3
+      },
+      {
+        "input_id": "N132",
+        "input": "Die attaching tools for non-IC",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "SGP",
+            "reported_share_percent": 36.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "NLD",
+            "reported_share_percent": 35.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 13.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 12.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 1.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 0.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.10000000000002,
+        "largest_individual_country_share_percent": 36.6
+      },
+      {
+        "input_id": "N108",
+        "input": "Direct write systems",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 67.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 32.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 67.2
+      },
+      {
+        "input_id": "N130",
+        "input": "Direct write systems (adv. pkg.)",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 100.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 100.0
+      },
+      {
+        "input_id": "N102",
+        "input": "Dry clean tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 74.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 25.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 74.8
+      },
+      {
+        "input_id": "N103",
+        "input": "Dry etch tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 59.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 26.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 12.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 1.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "GBR",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.1,
+        "largest_individual_country_share_percent": 59.9
+      },
+      {
+        "input_id": "N48",
+        "input": "Dry etching and cleaning tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 59.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 25.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 12.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 1.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "GBR",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "NLD",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 99.99999999999999,
+        "largest_individual_country_share_percent": 59.4
+      },
+      {
+        "input_id": "N101",
+        "input": "Dry etching tools (adv. pkg.)",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 71.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 21.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 6.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 71.2
+      },
+      {
+        "input_id": "N53",
+        "input": "Dry stripping tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 45.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 31.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "NLD",
+            "reported_share_percent": 9.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 6.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 5.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 2.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 100.10000000000001,
+        "largest_individual_country_share_percent": 45.9
+      },
+      {
+        "input_id": "N115",
+        "input": "E-beam metrology tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 63.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "NLD",
+            "reported_share_percent": 35.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 0.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 63.9
+      },
+      {
+        "input_id": "N113",
+        "input": "ECP tools (adv. pkg.)",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 91.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "SGP",
+            "reported_share_percent": 4.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 3.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 1.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 91.1
+      },
+      {
+        "input_id": "N20",
+        "input": "EUV lithography tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "NLD",
+            "reported_share_percent": 100.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 100.0
+      },
+      {
+        "input_id": "N45",
+        "input": "Electrochemical plating tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 99.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 0.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 99.4
+      },
+      {
+        "input_id": "N84",
+        "input": "Electronic design automation software",
+        "year": 2019,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 96.0,
+            "source": "[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 3.0,
+            "source": "[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 1.0,
+            "source": "[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)",
+            "aggregate_geography": false
+          },
+          {
+            "country": "GBR",
+            "reported_share_percent": 1.0,
+            "source": "[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)",
+            "aggregate_geography": false
+          },
+          {
+            "country": "ISR",
+            "reported_share_percent": 1.0,
+            "source": "[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing Mentor Graphics, Journal of Microelectronic Manufacturing, IPNest, BCG)",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 102.0,
+        "largest_individual_country_share_percent": 96.0
+      },
+      {
+        "input_id": "N55",
+        "input": "Etch and clean tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 52.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 32.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 10.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 2.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 0.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 0.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "NLD",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "AUT",
+            "reported_share_percent": 0.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "GBR",
+            "reported_share_percent": 0.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 99.89999999999999,
+        "largest_individual_country_share_percent": 52.6
+      },
+      {
+        "input_id": "N129",
+        "input": "Etch and clean tools (adv. pkg.)",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 54.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 31.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 13.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 1.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 99.9,
+        "largest_individual_country_share_percent": 54.8
+      },
+      {
+        "input_id": "S2",
+        "input": "Fabrication",
+        "year": 2022,
+        "countries": [
+          {
+            "country": "CHN",
+            "reported_share_percent": 24.0,
+            "source": "",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 18.0,
+            "source": "",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 17.0,
+            "source": "",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 17.0,
+            "source": "",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 10.0,
+            "source": "",
+            "aggregate_geography": false
+          },
+          {
+            "country": "EUR",
+            "reported_share_percent": 8.0,
+            "source": "",
+            "aggregate_geography": true
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 7.0,
+            "source": "",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 101.0,
+        "largest_individual_country_share_percent": 24.0
+      },
+      {
+        "input_id": "N109",
+        "input": "Fabrication tools (for advanced packaging)",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 65.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 15.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 5.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "AUT",
+            "reported_share_percent": 5.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "ISR",
+            "reported_share_percent": 2.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 2.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "SGP",
+            "reported_share_percent": 1.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 0.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHE",
+            "reported_share_percent": 0.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "FRA",
+            "reported_share_percent": 0.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 0.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "NLD",
+            "reported_share_percent": 0.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "GBR",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 65.8
+      },
+      {
+        "input_id": "N65",
+        "input": "Film, stack, and shape metrology tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 61.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "ISR",
+            "reported_share_percent": 24.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 7.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "HUN",
+            "reported_share_percent": 2.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 2.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 1.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "FRA",
+            "reported_share_percent": 0.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.10000000000001,
+        "largest_individual_country_share_percent": 61.5
+      },
+      {
+        "input_id": "N83",
+        "input": "Handlers and probers",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 41.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 20.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 16.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 8.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 6.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "MYS",
+            "reported_share_percent": 2.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "SGP",
+            "reported_share_percent": 1.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "ITA",
+            "reported_share_percent": 1.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 1.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 0.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 99.89999999999999,
+        "largest_individual_country_share_percent": 41.5
+      },
+      {
+        "input_id": "N40",
+        "input": "High-temperature CVD tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 73.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "NLD",
+            "reported_share_percent": 18.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 4.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 1.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "GBR",
+            "reported_share_percent": 1.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.00000000000001,
+        "largest_individual_country_share_percent": 73.7
+      },
+      {
+        "input_id": "N107",
+        "input": "Imprint lithography",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "AUT",
+            "reported_share_percent": 90.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 5.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 3.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 90.8
+      },
+      {
+        "input_id": "N63",
+        "input": "Inspection tools (adv. pkg.)",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 84.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "ISR",
+            "reported_share_percent": 14.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "FRA",
+            "reported_share_percent": 0.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 84.6
+      },
+      {
+        "input_id": "N51",
+        "input": "Insulator etching tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 55.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 29.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 13.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 0.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 99.9,
+        "largest_individual_country_share_percent": 55.9
+      },
+      {
+        "input_id": "N77",
+        "input": "Integrated assembly tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "SGP",
+            "reported_share_percent": 100.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 100.0
+      },
+      {
+        "input_id": "N17",
+        "input": "Ion implanters",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 84.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 10.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 3.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 0.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 84.7
+      },
+      {
+        "input_id": "N52",
+        "input": "Ion milling tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "Various countries",
+            "reported_share_percent": 100.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": null
+      },
+      {
+        "input_id": "N105",
+        "input": "KrF (DUV) lithography tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "NLD",
+            "reported_share_percent": 66.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 34.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 66.0
+      },
+      {
+        "input_id": "N82",
+        "input": "Linear and discrete testing tools",
+        "year": 2021,
+        "countries": [
+          {
+            "country": "CHN",
+            "reported_share_percent": 59.0,
+            "source": "CSET analysis of TechInsights data (2021). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 24.1,
+            "source": "CSET analysis of TechInsights data (2021). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 8.3,
+            "source": "CSET analysis of TechInsights data (2021). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "MYS",
+            "reported_share_percent": 5.7,
+            "source": "CSET analysis of TechInsights data (2021). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 1.7,
+            "source": "CSET analysis of TechInsights data (2021). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 1.2,
+            "source": "CSET analysis of TechInsights data (2021). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 59.0
+      },
+      {
+        "input_id": "N19",
+        "input": "Lithography tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "NLD",
+            "reported_share_percent": 81.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 15.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "AUT",
+            "reported_share_percent": 1.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 0.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 0.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "SWE",
+            "reported_share_percent": 0.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 0.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 0.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 100.1,
+        "largest_individual_country_share_percent": 81.5
+      },
+      {
+        "input_id": "N127",
+        "input": "Lithography tools (adv. pkg.)",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 83.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 9.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 4.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 1.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 1.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 99.89999999999999,
+        "largest_individual_country_share_percent": 83.2
+      },
+      {
+        "input_id": "N6",
+        "input": "Logic chip design",
+        "year": 2022,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 65.0,
+            "source": "Worldwide semiconductor sales for logic and micro (MPU, MCU, and DSP) product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 11.0,
+            "source": "Worldwide semiconductor sales for logic and micro (MPU, MCU, and DSP) product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).",
+            "aggregate_geography": false
+          },
+          {
+            "country": "EUR",
+            "reported_share_percent": 9.0,
+            "source": "Worldwide semiconductor sales for logic and micro (MPU, MCU, and DSP) product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).",
+            "aggregate_geography": true
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 5.0,
+            "source": "Worldwide semiconductor sales for logic and micro (MPU, MCU, and DSP) product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 4.0,
+            "source": "Worldwide semiconductor sales for logic and micro (MPU, MCU, and DSP) product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 4.0,
+            "source": "Worldwide semiconductor sales for logic and micro (MPU, MCU, and DSP) product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).",
+            "aggregate_geography": true
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 3.0,
+            "source": "Worldwide semiconductor sales for logic and micro (MPU, MCU, and DSP) product [segments](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 101.0,
+        "largest_individual_country_share_percent": 65.0
+      },
+      {
+        "input_id": "N39",
+        "input": "Low-pressure CVD tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 52.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 34.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 7.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 5.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.10000000000001,
+        "largest_individual_country_share_percent": 52.5
+      },
+      {
+        "input_id": "N133",
+        "input": "Manual wire bonders",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "DEU",
+            "reported_share_percent": 92.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "BLR",
+            "reported_share_percent": 6.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 100.1,
+        "largest_individual_country_share_percent": 92.5
+      },
+      {
+        "input_id": "N123",
+        "input": "Mask aligners",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "DEU",
+            "reported_share_percent": 82.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "AUT",
+            "reported_share_percent": 7.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 7.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 3.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 100.10000000000001,
+        "largest_individual_country_share_percent": 82.2
+      },
+      {
+        "input_id": "N29",
+        "input": "Mask exposure systems - e-beam",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 53.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "AUT",
+            "reported_share_percent": 46.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 53.4
+      },
+      {
+        "input_id": "N30",
+        "input": "Mask exposure systems - laser beam",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "SWE",
+            "reported_share_percent": 70.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 27.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 1.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 99.89999999999999,
+        "largest_individual_country_share_percent": 70.7
+      },
+      {
+        "input_id": "N5",
+        "input": "Memory chip design",
+        "year": 2022,
+        "countries": [
+          {
+            "country": "KOR",
+            "reported_share_percent": 60.0,
+            "source": "Worldwide semiconductor sales for memory product [segment](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 25.0,
+            "source": "Worldwide semiconductor sales for memory product [segment](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 7.0,
+            "source": "Worldwide semiconductor sales for memory product [segment](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 4.0,
+            "source": "Worldwide semiconductor sales for memory product [segment](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 3.0,
+            "source": "Worldwide semiconductor sales for memory product [segment](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 1.0,
+            "source": "Worldwide semiconductor sales for memory product [segment](https://perma.cc/UH5R-G63P). [World Semiconductor Trade Statistics (WSTS)](https://perma.cc/Y773-9T3A) and [Semiconductor Industry Association (SIA)](https://perma.cc/MPN9-W8YS).",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 60.0
+      },
+      {
+        "input_id": "N79",
+        "input": "Memory test tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 63.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 25.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 10.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 99.99999999999999,
+        "largest_individual_country_share_percent": 63.7
+      },
+      {
+        "input_id": "N54",
+        "input": "Misc. dry etch tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "CHN",
+            "reported_share_percent": 61.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 20.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 10.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 4.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "GBR",
+            "reported_share_percent": 3.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 99.89999999999999,
+        "largest_individual_country_share_percent": 61.1
+      },
+      {
+        "input_id": "N138",
+        "input": "Other deposition tools (non-IC)",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "CHN",
+            "reported_share_percent": 29.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 22.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 17.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 12.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHE",
+            "reported_share_percent": 8.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "NLD",
+            "reported_share_percent": 6.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 1.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 1.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "FRA",
+            "reported_share_percent": 1.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "GBR",
+            "reported_share_percent": 0.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 99.99999999999999,
+        "largest_individual_country_share_percent": 29.5
+      },
+      {
+        "input_id": "N75",
+        "input": "Other interconnect tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 31.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 18.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 15.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "SGP",
+            "reported_share_percent": 12.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 9.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "SWE",
+            "reported_share_percent": 8.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 2.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 1.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 1.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 31.1
+      },
+      {
+        "input_id": "N114",
+        "input": "Overlay metrology tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 51.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "NLD",
+            "reported_share_percent": 47.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 0.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 51.5
+      },
+      {
+        "input_id": "N111",
+        "input": "PVD tools (adv. pkg.)",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 82.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 7.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 4.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "SGP",
+            "reported_share_percent": 2.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHE",
+            "reported_share_percent": 1.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 0.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 82.4
+      },
+      {
+        "input_id": "N76",
+        "input": "Packaging tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 57.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 16.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "NLD",
+            "reported_share_percent": 16.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "SGP",
+            "reported_share_percent": 3.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 2.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 2.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 2.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.1,
+        "largest_individual_country_share_percent": 57.3
+      },
+      {
+        "input_id": "N12",
+        "input": "Photomask handlers",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 90.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 6.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 3.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 99.99999999999999,
+        "largest_individual_country_share_percent": 90.3
+      },
+      {
+        "input_id": "N62",
+        "input": "Photomask inspection and repair tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 46.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 42.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 10.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "BLR",
+            "reported_share_percent": 0.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 99.9,
+        "largest_individual_country_share_percent": 46.6
+      },
+      {
+        "input_id": "N33",
+        "input": "Photomasks",
+        "year": 2019,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 53.0,
+            "source": "[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 40.0,
+            "source": "[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 7.0,
+            "source": "[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/)",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 53.0
+      },
+      {
+        "input_id": "N42",
+        "input": "Physical vapor deposition tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 82.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 14.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 2.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHE",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 99.89999999999999,
+        "largest_individual_country_share_percent": 82.7
+      },
+      {
+        "input_id": "N38",
+        "input": "Plasma CVD tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 82.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 10.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 5.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "NLD",
+            "reported_share_percent": 1.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 0.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 99.89999999999999,
+        "largest_individual_country_share_percent": 82.9
+      },
+      {
+        "input_id": "N104",
+        "input": "Plasma modification tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 87.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 12.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 0.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.10000000000001,
+        "largest_individual_country_share_percent": 87.0
+      },
+      {
+        "input_id": "N60",
+        "input": "Process control tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 71.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 14.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "ISR",
+            "reported_share_percent": 6.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "NLD",
+            "reported_share_percent": 5.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 0.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 0.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 0.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "HUN",
+            "reported_share_percent": 0.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "BLR",
+            "reported_share_percent": 0.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "FRA",
+            "reported_share_percent": 0.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 71.7
+      },
+      {
+        "input_id": "N64",
+        "input": "Process monitoring tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 100.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 100.0
+      },
+      {
+        "input_id": "N43",
+        "input": "Rapid thermal processing tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "USA",
+            "reported_share_percent": 88.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 6.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 3.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 1.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 99.99999999999999,
+        "largest_individual_country_share_percent": 88.6
+      },
+      {
+        "input_id": "N32",
+        "input": "Resist processing tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 95.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 1.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 1.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 0.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 0.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 99.9,
+        "largest_individual_country_share_percent": 95.2
+      },
+      {
+        "input_id": "N122",
+        "input": "Resist processing tools (adv. pkg.)",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 92.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 4.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 1.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 1.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 99.99999999999999,
+        "largest_individual_country_share_percent": 92.1
+      },
+      {
+        "input_id": "N125",
+        "input": "Single wafer spin & spray systems (adv. pkg.)",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 66.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 30.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 2.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.1,
+        "largest_individual_country_share_percent": 66.8
+      },
+      {
+        "input_id": "N80",
+        "input": "SoC test tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 65.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 23.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 7.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 1.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "ITA",
+            "reported_share_percent": 0.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "MYS",
+            "reported_share_percent": 0.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 0.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 99.9,
+        "largest_individual_country_share_percent": 65.9
+      },
+      {
+        "input_id": "N112",
+        "input": "Spin-on deposition tools (adv. pkg.)",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "Various countries",
+            "reported_share_percent": 100.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": null
+      },
+      {
+        "input_id": "N120",
+        "input": "Test tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 63.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 23.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 6.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 4.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 1.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "ITA",
+            "reported_share_percent": 0.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "MYS",
+            "reported_share_percent": 0.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 100.10000000000001,
+        "largest_individual_country_share_percent": 63.0
+      },
+      {
+        "input_id": "N44",
+        "input": "Tube-based diffusion and deposition tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 75.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 14.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "NLD",
+            "reported_share_percent": 7.0,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 2.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 0.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 99.89999999999999,
+        "largest_individual_country_share_percent": 75.1
+      },
+      {
+        "input_id": "N26",
+        "input": "Wafer",
+        "year": 2019,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 56.0,
+            "source": "[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing CSET estimates based on financial statements and wafer production capacities)",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 16.0,
+            "source": "[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing CSET estimates based on financial statements and wafer production capacities)",
+            "aggregate_geography": false
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 14.0,
+            "source": "[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing CSET estimates based on financial statements and wafer production capacities)",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 10.0,
+            "source": "[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing CSET estimates based on financial statements and wafer production capacities)",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 4.0,
+            "source": "[CSET](https://cset.georgetown.edu/publication/the-semiconductor-supply-chain/) (citing CSET estimates based on financial statements and wafer production capacities)",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 56.0
+      },
+      {
+        "input_id": "N59",
+        "input": "Wafer and photomask handlers",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 88.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 10.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 0.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 88.3
+      },
+      {
+        "input_id": "N10",
+        "input": "Wafer bonding and aligning tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "AUT",
+            "reported_share_percent": 47.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 25.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 20.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 4.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 0.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 47.9
+      },
+      {
+        "input_id": "N11",
+        "input": "Wafer handlers",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 88.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 11.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 0.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          }
+        ],
+        "reported_share_sum_percent": 99.9,
+        "largest_individual_country_share_percent": 88.2
+      },
+      {
+        "input_id": "N137",
+        "input": "Wafer level stud bonders",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "SGP",
+            "reported_share_percent": 67.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 25.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 7.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 67.6
+      },
+      {
+        "input_id": "N49",
+        "input": "Wet etching and cleaning tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 51.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 32.4,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "KOR",
+            "reported_share_percent": 7.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 3.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "TWN",
+            "reported_share_percent": 2.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 1.8,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 0.6,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "AUT",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 99.99999999999999,
+        "largest_individual_country_share_percent": 51.9
+      },
+      {
+        "input_id": "N74",
+        "input": "Wire bonding tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "SGP",
+            "reported_share_percent": 86.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "JPN",
+            "reported_share_percent": 6.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "DEU",
+            "reported_share_percent": 5.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "Various countries",
+            "reported_share_percent": 1.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": true
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 0.5,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 0.3,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "BLR",
+            "reported_share_percent": 0.1,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 99.89999999999999,
+        "largest_individual_country_share_percent": 86.2
+      },
+      {
+        "input_id": "N106",
+        "input": "i-line lithography tools",
+        "year": 2025,
+        "countries": [
+          {
+            "country": "JPN",
+            "reported_share_percent": 56.9,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "NLD",
+            "reported_share_percent": 31.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "USA",
+            "reported_share_percent": 7.7,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          },
+          {
+            "country": "CHN",
+            "reported_share_percent": 4.2,
+            "source": "CSET analysis of TechInsights data (2025). Data used for analysis were published by TechInsights on July 3, 2026.",
+            "aggregate_geography": false
+          }
+        ],
+        "reported_share_sum_percent": 100.0,
+        "largest_individual_country_share_percent": 56.9
+      }
+    ],
+    "interpretation": "Latest available year per input or stage. Reported geography shares, not outage probabilities or capacities.",
+    "caveat": "Repository main/data snapshot; its README distinguishes it from the official release. Various countries and EUR are aggregate geographies, not single countries. Shares can be missing, rounded, or sum above 100. No normalization or cross-year summing."
+  },
+  "smat": {
+    "source": "https://github.com/kwoo-lee/SMAT2022",
+    "workbook": "LVHM_E.xlsx",
+    "model": "LVHM_E",
+    "sheets": {
+      "Address": {
+        "records": 2858,
+        "columns": [
+          "NAME",
+          "FAB_NAME",
+          "POSITION_X",
+          "POSITION_Y",
+          "ZCU_NAME",
+          "ZCU_TYPE"
+        ]
+      },
+      "ZCU": {
+        "records": 734,
+        "columns": [
+          "NAME",
+          "FAB_NAME"
+        ]
+      },
+      "Rail": {
+        "records": 3424,
+        "columns": [
+          "NAME",
+          "FAB_NAME",
+          "BAY_NAME",
+          "FROM_NODE",
+          "TO_NODE",
+          "MAX_SPEED",
+          "CURVE"
+        ]
+      },
+      "Bay": {
+        "records": 43,
+        "columns": [
+          "NAME",
+          "FAB_NAME",
+          "TYPE",
+          "RETICLE",
+          "NEIGHBOR_BAY"
+        ]
+      },
+      "Equipment": {
+        "records": 1116,
+        "columns": [
+          "NAME",
+          "TOOL_GROUP",
+          "BAY",
+          "WIDTH",
+          "HEIGHT",
+          "POSITION_X",
+          "POSITION_Y"
+        ]
+      },
+      "PortType": {
+        "records": 6,
+        "columns": [
+          "NAME",
+          "SIZE",
+          "INOUT_TYPE"
+        ]
+      },
+      "Port": {
+        "records": 22120,
+        "columns": [
+          "NAME",
+          "FAB_NAME",
+          "PORT_TYPE",
+          "EQP_NAME",
+          "RAILLINE_NAME",
+          "DISTANCE"
+        ]
+      },
+      "VehicleType": {
+        "records": 1,
+        "columns": [
+          "NAME",
+          "SIZE",
+          "MAX_SPEED",
+          "ACCELERATION",
+          "DECELERATION",
+          "MIN_DISTANCE"
+        ]
+      },
+      "Vehicle": {
+        "records": 500,
+        "columns": [
+          "NAME",
+          "FAB_NAME",
+          "TYPE",
+          "RAILLINE_NAME",
+          "DISTANCE"
+        ]
+      }
+    },
+    "largest_equipment_groups": [
+      {
+        "tool_group": "DE_FE_86",
+        "equipment_records": 149
+      },
+      {
+        "tool_group": "LithoTrack_FE_95",
+        "equipment_records": 47
+      },
+      {
+        "tool_group": "LithoTrack_FE_115",
+        "equipment_records": 46
+      },
+      {
+        "tool_group": "STOCKER",
+        "equipment_records": 40
+      },
+      {
+        "tool_group": "WE_FE_108",
+        "equipment_records": 31
+      },
+      {
+        "tool_group": "Litho_FE_92",
+        "equipment_records": 28
+      },
+      {
+        "tool_group": "DE_FE_51",
+        "equipment_records": 25
+      },
+      {
+        "tool_group": "Litho_BE_110",
+        "equipment_records": 25
+      },
+      {
+        "tool_group": "DE_FE_71",
+        "equipment_records": 23
+      },
+      {
+        "tool_group": "Litho_FE_111",
+        "equipment_records": 22
+      },
+      {
+        "tool_group": "DE_BE_66",
+        "equipment_records": 21
+      },
+      {
+        "tool_group": "DE_FE_62",
+        "equipment_records": 21
+      }
+    ],
+    "interpretation": "Static AMHS/factory topology inventory, not observed production or delay labels.",
+    "caveat": "No throughput, yield, utilization, capacity, or delay forecast is inferred from equipment counts. The repository simulator is Windows-only and is not executed."
+  },
+  "relationship": "Three separate datasets; no validated record-level join exists between them.",
+  "files": [
+    {
+      "path": "DataCoSupplyChainDataset.csv",
+      "bytes": 95910149,
+      "sha256": "fa6d022ed437155e1a2f0378710602848703c8a7f203f7ff5d77805bf8480aa6"
+    },
+    {
+      "path": "cset/README.md",
+      "bytes": 133,
+      "sha256": "62e703eee8be6f5075e5fe6dfaa60fe097487e30954c0285c3be64f3f815d671"
+    },
+    {
+      "path": "cset/inputs.csv",
+      "bytes": 64498,
+      "sha256": "0c0a3418a80a6e7edea5c63c98c4829d6d6b613cd648c30905fe22f70dbbd17b"
+    },
+    {
+      "path": "cset/providers.csv",
+      "bytes": 14688,
+      "sha256": "c529479afe7d35afa750729bf6dd45227a375568c02b8cf401aad239360a13e4"
+    },
+    {
+      "path": "cset/provision.csv",
+      "bytes": 203242,
+      "sha256": "d94267801a73745e40bfaee8a30341adb37a168a8a0f28bf5d03f78e05f6c16f"
+    },
+    {
+      "path": "cset/sequence.csv",
+      "bytes": 7676,
+      "sha256": "bffa57c370bc6b027dea318cda5f65b023eb08eb690e3e7dfaad6a9d61449174"
+    },
+    {
+      "path": "cset/stages.csv",
+      "bytes": 3653,
+      "sha256": "87717f108a0fdc874d7a0a261d35c3450d46ce8042eba53e957b9a03a24786ce"
+    },
+    {
+      "path": "cset/technical_notes.md",
+      "bytes": 3911,
+      "sha256": "3e9783ff19d962b0480b14c66ad80935395d2478c52bb65a579cce98d58b363a"
+    },
+    {
+      "path": "smat/LVHM_E.xlsx",
+      "bytes": 1051571,
+      "sha256": "8e74e6db2272ad7dbeeb26de2adb1cd69e27a7848fe7baa0524803fd317156c0"
+    }
+  ]
+}
