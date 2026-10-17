@@ -174,7 +174,7 @@ pip install -r requirements.txt
 
 ### Running the Application
 
-Once the backend and dashboard entry points have been implemented, start the API:
+Start the API:
 
 ```bash
 uvicorn app.main:app --reload
@@ -186,7 +186,13 @@ In a separate terminal, start the dashboard:
 streamlit run dashboard.py
 ```
 
-The commands above assume the project uses the corresponding file structure. Update them if the implementation uses different entry points.
+Open `http://localhost:8501` to use the coordination control room. API documentation is available at `http://localhost:8000/docs`.
+
+Run the automated checks with:
+
+```bash
+pytest -q
+```
 
 ## Project Structure
 
@@ -215,15 +221,15 @@ This is the proposed project structure; files should be added as the correspondi
 
 ## Roadmap
 
-- [ ] Create the factory and supplier scenario
-- [ ] Implement the centralized optimization baseline
-- [ ] Add participant agents and approved message schemas
-- [ ] Enforce participant-level access controls
-- [ ] Implement allocation feasibility validation
-- [ ] Build the interactive dashboard
-- [ ] Add supplier disruption and demand spike simulations
-- [ ] Record information exchange and decision history
-- [ ] Compare cost, feasibility, and runtime against the baseline
+- [x] Create the factory and supplier scenario
+- [x] Implement the centralized optimization baseline
+- [x] Add participant agents and approved message schemas
+- [x] Enforce participant-level access controls
+- [x] Implement allocation feasibility validation
+- [x] Build the interactive dashboard
+- [x] Add supplier disruption and demand spike simulations
+- [x] Record information exchange and decision history
+- [x] Compare cost, feasibility, and runtime against the baseline
 - [ ] Investigate distributed optimization
 - [ ] Demonstrate IBM Z integration if the required environment is available
 
