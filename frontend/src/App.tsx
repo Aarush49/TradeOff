@@ -147,13 +147,20 @@ export function App() {
 
   async function login(credentials: { username: string; password: string }) {
     const u = await api<User>('/api/login', credentials);
-    setJustLoggedIn(true);
     setUser(u);
-    setState(null);
+    setJustLoggedIn(true);
     navigateTo('desk');
+    try {
+      const next = await api<LiveState>('/api/live/state');
+      setState(next);
+      setConnected(true);
+      if (u.role === 'coordinator') {
+        api<MetricsState>('/api/live/metrics').then(setMetrics).catch(() => {});
+      }
+    } catch {}
     setTimeout(() => {
       setJustLoggedIn(false);
-    }, 1000);
+    }, 1200);
   }
 
   async function logout() {
