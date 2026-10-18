@@ -12,6 +12,7 @@ import {
 import type { User, LiveState, MetricsState } from './types';
 import { api } from './api/client';
 import { Empty } from './components/common/Empty';
+import { ErrorBoundary } from './components/common/ErrorBoundary';
 import { Sidebar } from './components/layout/Sidebar';
 import type { NavItem } from './components/layout/Sidebar';
 import { Topbar } from './components/layout/Topbar';
@@ -258,34 +259,36 @@ export function App() {
             </div>
           )}
 
-          {!state ? (
-            <Empty>Connecting to the shared network…</Empty>
-          ) : activePage === 'desk' ? (
-            coordinator ? (
-              <DecisionDeskPage
+          <ErrorBoundary fallbackTitle="This page encountered an error rendering">
+            {!state ? (
+              <Empty>Connecting to the shared network…</Empty>
+            ) : activePage === 'desk' ? (
+              coordinator ? (
+                <DecisionDeskPage
+                  state={state}
+                  metrics={metrics}
+                  act={act}
+                  busy={busy}
+                  onAudit={() => navigateTo('audit')}
+                />
+              ) : (
+                <ParticipantPage state={state} user={user} />
+              )
+            ) : activePage === 'models' ? (
+              <ModelExplorerPage state={state} />
+            ) : activePage === 'sandbox' ? (
+              <SandboxPage />
+            ) : activePage === 'audit' ? (
+              <AuditPage />
+            ) : (
+              <ManualUpdatesPage
                 state={state}
-                metrics={metrics}
+                user={user}
                 act={act}
                 busy={busy}
-                onAudit={() => navigateTo('audit')}
               />
-            ) : (
-              <ParticipantPage state={state} user={user} />
-            )
-          ) : activePage === 'models' ? (
-            <ModelExplorerPage state={state} />
-          ) : activePage === 'sandbox' ? (
-            <SandboxPage />
-          ) : activePage === 'audit' ? (
-            <AuditPage />
-          ) : (
-            <ManualUpdatesPage
-              state={state}
-              user={user}
-              act={act}
-              busy={busy}
-            />
-          )}
+            )}
+          </ErrorBoundary>
 
           <footer className="page-footer">
             <span>

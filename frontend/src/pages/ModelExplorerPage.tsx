@@ -105,9 +105,12 @@ export function ModelExplorerPage({ state }: ModelExplorerPageProps) {
     }
   }
 
-  const exposure = context?.cset.country_exposure.find(
+  const exposure = context?.cset?.country_exposure?.find(
     c => String(c.input_id) === String(chip)
   );
+
+  const latestProposal = state.proposals?.[0];
+  const arrivalScenarios = latestProposal?.data?.analysis?.arrival_scenarios;
 
   return (
     <>
@@ -157,8 +160,8 @@ export function ModelExplorerPage({ state }: ModelExplorerPageProps) {
 
           <div className="overview-grid">
             <Panel title="Current arrival scenarios" eyebrow="PREDICTION DISTRIBUTION" className="pop-in">
-              {state.proposals?.[0]?.data.analysis.arrival_scenarios ? (
-                state.proposals[0].data.analysis.arrival_scenarios.map((s, idx) => (
+              {arrivalScenarios && arrivalScenarios.length > 0 ? (
+                arrivalScenarios.map((s, idx) => (
                   <div className="bar-item" key={s.arrival_day}>
                     <div>
                       <span>Day {s.arrival_day}</span>
@@ -230,7 +233,7 @@ export function ModelExplorerPage({ state }: ModelExplorerPageProps) {
               </Button>
             }
           >
-            {benchmark && (
+            {benchmark && benchmark.policies && (
               <>
                 <Table
                   rows={Object.entries(benchmark.policies).map(([k, r]) => ({
@@ -241,10 +244,10 @@ export function ModelExplorerPage({ state }: ModelExplorerPageProps) {
                         always_reserve: 'Always reserve backup',
                         ai_scenarios: 'AI scenario planning',
                       } as Record<string, string>)[k] || k,
-                    cost: money(r.mean_cost),
-                    unmet: r.unmet,
-                    breaches: r.minimum_breaches,
-                    reserve: r.mean_reserve_quantity != null ? r.mean_reserve_quantity.toFixed(1) : '—',
+                    cost: money(r?.mean_cost),
+                    unmet: r?.unmet ?? 0,
+                    breaches: r?.minimum_breaches ?? 0,
+                    reserve: r?.mean_reserve_quantity != null ? r.mean_reserve_quantity.toFixed(1) : '—',
                   }))}
                   cols={[
                     ['policy', 'Policy'],
@@ -255,9 +258,9 @@ export function ModelExplorerPage({ state }: ModelExplorerPageProps) {
                   ]}
                 />
                 <p className="fine">
-                  {benchmark.episodes} episodes · {benchmark.host.system}/
-                  {benchmark.host.architecture} · {date(benchmark.generated_at)}.{' '}
-                  {benchmark.limitations.join(' ')}
+                  {benchmark.episodes} episodes · {benchmark.host?.system || 'System'}/
+                  {benchmark.host?.architecture || 'Arch'} · {benchmark.generated_at ? date(benchmark.generated_at) : '—'}.{' '}
+                  {benchmark.limitations?.join(' ') || ''}
                 </p>
               </>
             )}
@@ -277,19 +280,19 @@ export function ModelExplorerPage({ state }: ModelExplorerPageProps) {
           <div className="stats-grid pop-in">
             <div className="stat">
               <span>Test accuracy</span>
-              <strong>{pct(model.evaluation.test.accuracy)}</strong>
+              <strong>{pct(model.evaluation?.test?.accuracy)}</strong>
             </div>
             <div className="stat">
               <span>ROC AUC</span>
-              <strong>{model.evaluation.test.roc_auc.toFixed(3)}</strong>
+              <strong>{model.evaluation?.test?.roc_auc != null ? model.evaluation.test.roc_auc.toFixed(3) : '—'}</strong>
             </div>
             <div className="stat">
               <span>Recall</span>
-              <strong>{pct(model.evaluation.test.recall)}</strong>
+              <strong>{pct(model.evaluation?.test?.recall)}</strong>
             </div>
             <div className="stat">
               <span>Later test orders</span>
-              <strong>{model.evaluation.test.n.toLocaleString()}</strong>
+              <strong>{model.evaluation?.test?.n != null ? model.evaluation.test.n.toLocaleString() : '—'}</strong>
             </div>
           </div>
 
@@ -305,11 +308,11 @@ export function ModelExplorerPage({ state }: ModelExplorerPageProps) {
               }}
             >
               <div className="field-grid">
-                {model.features.map(f => (
+                {(model.features || []).map(f => (
                   <label key={f}>
                     {f}
                     <select
-                      value={features[f]}
+                      value={features[f] || ''}
                       onChange={e => {
                         predictionVersion.current++;
                         setFeatures({ ...features, [f]: e.target.value });
@@ -336,9 +339,9 @@ export function ModelExplorerPage({ state }: ModelExplorerPageProps) {
                   {prediction.interpretation} {prediction.warning}
                 </p>
                 <Table
-                  rows={prediction.contributions.map(c => ({
+                  rows={(prediction.contributions || []).map(c => ({
                     ...c,
-                    contribution: c.log_odds_contribution.toFixed(3),
+                    contribution: c.log_odds_contribution != null ? c.log_odds_contribution.toFixed(3) : '—',
                   }))}
                   cols={[
                     ['feature', 'Feature'],
@@ -395,21 +398,21 @@ export function ModelExplorerPage({ state }: ModelExplorerPageProps) {
                   </div>
                 </div>
               ))}
-              <p className="fine">{context.cset.caveat}</p>
+              <p className="fine">{context.cset?.caveat}</p>
             </Panel>
 
             <Panel title="Factory topology" eyebrow="SMAT2022" className="pop-in">
               <Table
-                rows={Object.entries(context.smat.sheets).map(([sheet, r]) => ({
+                rows={Object.entries(context.smat?.sheets || {}).map(([sheet, r]) => ({
                   sheet,
-                  records: r.records.toLocaleString(),
+                  records: r?.records != null ? r.records.toLocaleString() : '—',
                 }))}
                 cols={[
                   ['sheet', 'Topology component'],
                   ['records', 'Records'],
                 ]}
               />
-              <p className="fine">{context.smat.caveat}</p>
+              <p className="fine">{context.smat?.caveat}</p>
             </Panel>
           </div>
         </>
