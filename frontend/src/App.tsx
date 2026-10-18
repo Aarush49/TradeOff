@@ -23,6 +23,7 @@ import { ModelExplorerPage } from './pages/ModelExplorerPage';
 import { SandboxPage } from './pages/SandboxPage';
 import { AuditPage } from './pages/AuditPage';
 import { ManualUpdatesPage } from './pages/ManualUpdatesPage';
+import { ErrorBoundary } from './components/common/ErrorBoundary';
 
 export function App() {
   const [user, setUser] = useState<User | null>(null);

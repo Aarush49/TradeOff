@@ -59,8 +59,8 @@ export function ModelExplorerPage({ state }: ModelExplorerPageProps) {
         };
         setFeatures(
           Object.fromEntries(
-            m.value.features.map(k => {
-              const opts = m.value.choices?.[k] || [];
+            (m.value?.features || []).map(k => {
+              const opts = m.value?.choices?.[k] || [];
               return [
                 k,
                 opts.includes(defaults[k])
@@ -74,7 +74,7 @@ export function ModelExplorerPage({ state }: ModelExplorerPageProps) {
 
       if (s.status === 'fulfilled') setShipment(s.value);
 
-      if (c.status === 'fulfilled') {
+      if (c.status === 'fulfilled' && c.value) {
         setContext(c.value);
         setChip(String(c.value.cset?.country_exposure?.[0]?.input_id || ''));
       }
@@ -83,7 +83,7 @@ export function ModelExplorerPage({ state }: ModelExplorerPageProps) {
 
       const errs = results
         .filter((r): r is PromiseRejectedResult => r.status === 'rejected')
-        .map(r => r.reason.message)
+        .map(r => r.reason?.message || String(r.reason) || 'Failed to load some intelligence models')
         .join(' ');
       if (errs) setError(errs);
     });
@@ -109,7 +109,7 @@ export function ModelExplorerPage({ state }: ModelExplorerPageProps) {
     c => String(c.input_id) === String(chip)
   );
 
-  const latestProposal = state.proposals?.[0];
+  const latestProposal = state?.proposals?.[0];
   const arrivalScenarios = latestProposal?.data?.analysis?.arrival_scenarios;
 
   return (
@@ -162,7 +162,7 @@ export function ModelExplorerPage({ state }: ModelExplorerPageProps) {
             <Panel title="Current arrival scenarios" eyebrow="PREDICTION DISTRIBUTION" className="pop-in">
               {arrivalScenarios && arrivalScenarios.length > 0 ? (
                 arrivalScenarios.map((s, idx) => (
-                  <div className="bar-item" key={s.arrival_day}>
+                  <div className="bar-item" key={s.arrival_day ?? idx}>
                     <div>
                       <span>Day {s.arrival_day}</span>
                       <strong>{pct(s.probability)}</strong>
@@ -182,7 +182,7 @@ export function ModelExplorerPage({ state }: ModelExplorerPageProps) {
               ) : (
                 <Empty>Start a scenario on the decision desk to see predictions.</Empty>
               )}
-              <p className="fine">{shipment?.model_id}</p>
+              {shipment?.model_id && <p className="fine">{shipment.model_id}</p>}
             </Panel>
 
             <Panel title="What each part does" className="pop-in">
@@ -233,7 +233,7 @@ export function ModelExplorerPage({ state }: ModelExplorerPageProps) {
               </Button>
             }
           >
-            {benchmark && benchmark.policies && (
+            {benchmark && benchmark.policies ? (
               <>
                 <Table
                   rows={Object.entries(benchmark.policies).map(([k, r]) => ({
@@ -259,163 +259,173 @@ export function ModelExplorerPage({ state }: ModelExplorerPageProps) {
                 />
                 <p className="fine">
                   {benchmark.episodes} episodes · {benchmark.host?.system || 'System'}/
-                  {benchmark.host?.architecture || 'Arch'} · {benchmark.generated_at ? date(benchmark.generated_at) : '—'}.{' '}
-                  {benchmark.limitations?.join(' ') || ''}
+                  {benchmark.host?.architecture || 'Architecture'} · {benchmark.generated_at ? date(benchmark.generated_at) : 'Recent'}.{' '}
+                  {benchmark.limitations?.join(' ')}
                 </p>
               </>
+            ) : (
+              <Empty>Loading decision policy comparisons…</Empty>
             )}
           </Panel>
         </>
       )}
 
-      {tab === 'historical' && model && (
-        <>
-          <div className="notice pop-in">
-            <strong>Historical retail benchmark</strong>
-            <p>
-              Trained on DataCo orders. Its late-delivery score does not predict a semiconductor shortage or a specific supplier’s delay.
-            </p>
-          </div>
+      {tab === 'historical' && (
+        model ? (
+          <>
+            <div className="notice pop-in">
+              <strong>Historical retail benchmark</strong>
+              <p>
+                Trained on DataCo orders. Its late-delivery score does not predict a semiconductor shortage or a specific supplier’s delay.
+              </p>
+            </div>
 
-          <div className="stats-grid pop-in">
-            <div className="stat">
-              <span>Test accuracy</span>
-              <strong>{pct(model.evaluation?.test?.accuracy)}</strong>
-            </div>
-            <div className="stat">
-              <span>ROC AUC</span>
-              <strong>{model.evaluation?.test?.roc_auc != null ? model.evaluation.test.roc_auc.toFixed(3) : '—'}</strong>
-            </div>
-            <div className="stat">
-              <span>Recall</span>
-              <strong>{pct(model.evaluation?.test?.recall)}</strong>
-            </div>
-            <div className="stat">
-              <span>Later test orders</span>
-              <strong>{model.evaluation?.test?.n != null ? model.evaluation.test.n.toLocaleString() : '—'}</strong>
-            </div>
-          </div>
-
-          <Panel title="Explore delivery risk" eyebrow="INTERACTIVE INFERENCE" className="pop-in">
-            <form
-              onSubmit={e => {
-                e.preventDefault();
-                const version = ++predictionVersion.current;
-                runOperation(async () => {
-                  const result = await api<RiskPrediction>('/api/risk', { features });
-                  if (version === predictionVersion.current) setPrediction(result);
-                });
-              }}
-            >
-              <div className="field-grid">
-                {(model.features || []).map(f => (
-                  <label key={f}>
-                    {f}
-                    <select
-                      value={features[f] || ''}
-                      onChange={e => {
-                        predictionVersion.current++;
-                        setFeatures({ ...features, [f]: e.target.value });
-                        setPrediction(null);
-                      }}
-                    >
-                      {(model.choices?.[f] || []).map(v => (
-                        <option key={v}>{v}</option>
-                      ))}
-                    </select>
-                  </label>
-                ))}
+            <div className="stats-grid pop-in">
+              <div className="stat">
+                <span>Test accuracy</span>
+                <strong>{model.evaluation?.test?.accuracy != null ? pct(model.evaluation.test.accuracy) : '—'}</strong>
               </div>
-              <Button disabled={busy} icon={Activity}>
-                {busy ? 'Predicting…' : 'Estimate delivery risk'}
-              </Button>
-            </form>
+              <div className="stat">
+                <span>ROC AUC</span>
+                <strong>{model.evaluation?.test?.roc_auc != null ? model.evaluation.test.roc_auc.toFixed(3) : '—'}</strong>
+              </div>
+              <div className="stat">
+                <span>Recall</span>
+                <strong>{model.evaluation?.test?.recall != null ? pct(model.evaluation.test.recall) : '—'}</strong>
+              </div>
+              <div className="stat">
+                <span>Later test orders</span>
+                <strong>{model.evaluation?.test?.n != null ? model.evaluation.test.n.toLocaleString() : '—'}</strong>
+              </div>
+            </div>
 
-            {prediction && (
-              <div className="prediction-result pop-in">
-                <span>Estimated late-delivery probability</span>
-                <strong>{pct(prediction.late_delivery_probability)}</strong>
-                <p className="muted">
-                  {prediction.interpretation} {prediction.warning}
-                </p>
+            <Panel title="Explore delivery risk" eyebrow="INTERACTIVE INFERENCE" className="pop-in">
+              <form
+                onSubmit={e => {
+                  e.preventDefault();
+                  const version = ++predictionVersion.current;
+                  runOperation(async () => {
+                    const result = await api<RiskPrediction>('/api/risk', { features });
+                    if (version === predictionVersion.current) setPrediction(result);
+                  });
+                }}
+              >
+                <div className="field-grid">
+                  {(model.features || []).map(f => (
+                    <label key={f}>
+                      {f}
+                      <select
+                        value={features[f] || ''}
+                        onChange={e => {
+                          predictionVersion.current++;
+                          setFeatures({ ...features, [f]: e.target.value });
+                          setPrediction(null);
+                        }}
+                      >
+                        {(model.choices?.[f] || []).map(v => (
+                          <option key={v} value={v}>{v}</option>
+                        ))}
+                      </select>
+                    </label>
+                  ))}
+                </div>
+                <Button disabled={busy} icon={Activity}>
+                  {busy ? 'Predicting…' : 'Estimate delivery risk'}
+                </Button>
+              </form>
+
+              {prediction && (
+                <div className="prediction-result pop-in">
+                  <span>Estimated late-delivery probability</span>
+                  <strong>{pct(prediction.late_delivery_probability)}</strong>
+                  <p className="muted">
+                    {prediction.interpretation} {prediction.warning}
+                  </p>
+                  <Table
+                    rows={(prediction.contributions || []).map(c => ({
+                      ...c,
+                      contribution: typeof c.log_odds_contribution === 'number' ? c.log_odds_contribution.toFixed(3) : String(c.log_odds_contribution ?? '—'),
+                    }))}
+                    cols={[
+                      ['feature', 'Feature'],
+                      ['value', 'Value'],
+                      ['contribution', 'Log-odds contribution'],
+                    ]}
+                  />
+                </div>
+              )}
+            </Panel>
+          </>
+        ) : (
+          <Empty>Loading historical delivery model…</Empty>
+        )
+      )}
+
+      {tab === 'context' && (
+        context ? (
+          <>
+            <div className="notice pop-in">
+              <strong>Context, not a joined prediction model</strong>
+              <p>
+                CSET and SMAT2022 describe supply geography and factory topology. They are separate datasets without a validated record-level join to shipment outcomes.
+              </p>
+            </div>
+
+            <div className="overview-grid">
+              <Panel title="Supply geography" eyebrow="CSET CHIP EXPLORER" className="pop-in">
+                <label>
+                  Semiconductor input
+                  <select value={chip} onChange={e => setChip(e.target.value)}>
+                    {(context.cset?.country_exposure || []).map(c => (
+                      <option key={c.input_id} value={c.input_id}>
+                        {c.input} · {c.year}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+
+                {(exposure?.countries || []).map((c, i) => (
+                  <div className="bar-item" key={i}>
+                    <div>
+                      <span>{c.country}</span>
+                      <strong>{c.reported_share_percent ?? '—'}%</strong>
+                    </div>
+                    <div className="bar-track">
+                      <i
+                        style={
+                          {
+                            '--target-width': `${Math.min(
+                              100,
+                              c.reported_share_percent || 0
+                            )}%`,
+                            animationDelay: `${i * 0.08}s`,
+                          } as React.CSSProperties
+                        }
+                      />
+                    </div>
+                  </div>
+                ))}
+                {context.cset?.caveat && <p className="fine">{context.cset.caveat}</p>}
+              </Panel>
+
+              <Panel title="Factory topology" eyebrow="SMAT2022" className="pop-in">
                 <Table
-                  rows={(prediction.contributions || []).map(c => ({
-                    ...c,
-                    contribution: c.log_odds_contribution != null ? c.log_odds_contribution.toFixed(3) : '—',
+                  rows={Object.entries(context.smat?.sheets || {}).map(([sheet, r]) => ({
+                    sheet,
+                    records: r?.records != null ? r.records.toLocaleString() : '—',
                   }))}
                   cols={[
-                    ['feature', 'Feature'],
-                    ['value', 'Value'],
-                    ['contribution', 'Log-odds contribution'],
+                    ['sheet', 'Topology component'],
+                    ['records', 'Records'],
                   ]}
                 />
-              </div>
-            )}
-          </Panel>
-        </>
-      )}
-
-      {tab === 'context' && context && (
-        <>
-          <div className="notice pop-in">
-            <strong>Context, not a joined prediction model</strong>
-            <p>
-              CSET and SMAT2022 describe supply geography and factory topology. They are separate datasets without a validated record-level join to shipment outcomes.
-            </p>
-          </div>
-
-          <div className="overview-grid">
-            <Panel title="Supply geography" eyebrow="CSET CHIP EXPLORER" className="pop-in">
-              <label>
-                Semiconductor input
-                <select value={chip} onChange={e => setChip(e.target.value)}>
-                  {(context.cset?.country_exposure || []).map(c => (
-                    <option key={c.input_id} value={c.input_id}>
-                      {c.input} · {c.year}
-                    </option>
-                  ))}
-                </select>
-              </label>
-
-              {(exposure?.countries || []).map((c, i) => (
-                <div className="bar-item" key={i}>
-                  <div>
-                    <span>{c.country}</span>
-                    <strong>{c.reported_share_percent ?? '—'}%</strong>
-                  </div>
-                  <div className="bar-track">
-                    <i
-                      style={
-                        {
-                          '--target-width': `${Math.min(
-                            100,
-                            c.reported_share_percent || 0
-                          )}%`,
-                          animationDelay: `${i * 0.08}s`,
-                        } as React.CSSProperties
-                      }
-                    />
-                  </div>
-                </div>
-              ))}
-              <p className="fine">{context.cset?.caveat}</p>
-            </Panel>
-
-            <Panel title="Factory topology" eyebrow="SMAT2022" className="pop-in">
-              <Table
-                rows={Object.entries(context.smat?.sheets || {}).map(([sheet, r]) => ({
-                  sheet,
-                  records: r?.records != null ? r.records.toLocaleString() : '—',
-                }))}
-                cols={[
-                  ['sheet', 'Topology component'],
-                  ['records', 'Records'],
-                ]}
-              />
-              <p className="fine">{context.smat?.caveat}</p>
-            </Panel>
-          </div>
-        </>
+                {context.smat?.caveat && <p className="fine">{context.smat.caveat}</p>}
+              </Panel>
+            </div>
+          </>
+        ) : (
+          <Empty>Loading semiconductor context…</Empty>
+        )
       )}
     </>
   );
