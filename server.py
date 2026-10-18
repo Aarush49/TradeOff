@@ -1,6 +1,8 @@
 """Local TradeOff demo server. Python standard library only."""
 import argparse
 import json
+import mimetypes
+from urllib.parse import unquote, urlsplit
 import sqlite3
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -35,18 +37,25 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         user = self.accounts().current_user(self.headers.get('Cookie'))
-        if self.path == '/audit':
+        if self.path.startswith('/ui/'):
+            root = PAGE.parent / 'ui'
+            asset = (root / unquote(urlsplit(self.path).path[len('/ui/'):])).resolve()
+            if root.resolve() in asset.parents and asset.is_file() and asset.suffix in ('.js', '.css', '.svg', '.woff2'):
+                self.respond(200, asset.read_bytes(), mimetypes.guess_type(str(asset))[0] or 'application/octet-stream')
+            else:
+                self.respond(404, b'{"error":"Not found"}')
+        elif self.path == '/audit':
             if not user:
                 self.respond(303, b'', headers={'Location': '/login'})
             elif user['role'] != 'coordinator':
                 self.respond(403, b'Coordinator workspace required.', 'text/plain')
             else:
-                self.respond(200, PAGE.with_name('audit.html').read_bytes(), 'text/html; charset=utf-8')
+                self.respond(200, (PAGE.parent / 'ui' / 'index.html').read_bytes(), 'text/html; charset=utf-8')
         elif self.path in ('/', '/index.html', '/app', '/login'):
             if self.path == '/app' and not user:
                 self.respond(303, b'', headers={'Location': '/login'})
                 return
-            page = PAGE if user else PAGE.with_name('login.html')
+            page = PAGE.parent / 'ui' / 'index.html'
             self.respond(200, page.read_bytes(), 'text/html; charset=utf-8')
         elif self.path in ('/intelligence.js', '/login.js', '/session.js', '/live.js', '/audit.js'):
             self.respond(200, PAGE.with_name(self.path[1:]).read_bytes(), 'text/javascript; charset=utf-8')

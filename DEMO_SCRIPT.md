@@ -7,24 +7,25 @@ run on that server. The page is an event-driven simulation, not live factory dat
 1. **Describe the decision.** Factory A makes medical devices and needs at least
    400 chips by day 2. Factory B needs chips by day 4. Supplier S is the primary
    shipment; normal and reserved alternative supply are separate synthetic pools.
-2. **Start new replay → Gradual congestion.** New checkpoints arrive every five
+2. **Start new replay
+3. → Gradual congestion.** New checkpoints arrive every five
    seconds. Show the received revision, changing ETA/backlog/route signals,
    simulation-trained miss risk, and proposed backup reservation. The approved
    shipment table remains unchanged while the proposal is pending.
-3. **Wait for the pause before the outcome.** After four checkpoints, the replay
+4. **Wait for the pause before the outcome.** After four checkpoints, the replay
    stops. Expand arrival scenarios/candidate plans. Explain the illustrative
    modeled-risk constraint and expected-cost calculation.
-4. **Review this revision.** Inspect the proposed allocation and shipment table.
-   Add an optional decision note, then **Approve proposed allocation**. Approval
+5. **Review recommendation.** Inspect the proposed allocation and shipment table.
+   Add an optional decision note, then **Approve & publish**. Approval
    updates the shared plan, not a real purchase order.
-5. **Show the participant view.** Sign out and sign in as **Factory_A**, or use a separate
+6. **Show the participant view.** Sign out and sign in as **Factory_A**, or use a separate
    browser profile/private window to retain the coordinator session. Factory A
    sees its approved alternative-supply assignment, not the network's private
    proposals or audit. Its account has a server-assigned factory role.
-6. **Reveal simulated outcome.** Return to the coordinator and click **Reveal
+7. **Reveal simulated outcome.** Return to the coordinator and click **Reveal
    simulated outcome**. The final arrival is emitted now, after the decision.
    Show realized cost, unmet demand, and minimum breaches under the approved plan.
-7. **Show evidence.** Open processing measurements and download the audit. In
+8. **Show evidence.** Open **Decision audit** to inspect the timeline and export it. In
    policy comparison, run 300 episodes on the server; show its architecture and
    separate server-only processing latency from browser/human response time.
 
