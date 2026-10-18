@@ -106,7 +106,9 @@ class Handler(BaseHTTPRequestHandler):
             return
         try:
             origin = self.headers.get('Origin')
-            if origin and origin != 'http://' + self.headers.get('Host', ''):
+            host = 'http://' + self.headers.get('Host', '')
+            allowed_origins = {host, 'http://127.0.0.1:5173', 'http://localhost:5173', 'http://127.0.0.1:8501', 'http://localhost:8501'}
+            if origin and origin not in allowed_origins:
                 self.respond(403, b'{"error":"Cross-origin requests are not supported."}')
                 return
             user = self.accounts().current_user(self.headers.get('Cookie'))
