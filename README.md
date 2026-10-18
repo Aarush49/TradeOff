@@ -1,191 +1,116 @@
-# TradeOff — event-driven supply decisions
+# TradeOff ⇄
 
-An IBM Z Datathon prototype that processes shipment events, forecasts arrival
-risk, proposes constrained recovery allocations, and publishes a shared plan
-only after coordinator approval. The industrial workflow is a **clearly labeled
-simulation**, with a separate historical DataCo retail benchmark.
+> Event-driven supply chain coordination with human-in-the-loop approval.
 
-Python's standard library powers the server, models, optimizer and SQLite store.
-**No pip install, Node.js, C/C++ compiler, Rust toolchain, GPU or model API key is
-required.** Google OAuth is planned, not connected.
+TradeOff processes real-time shipment checkpoint events, forecasts arrival risk using a trained ML model, and proposes constrained recovery allocations — but only publishes a plan after explicit coordinator approval. Built as an IBM Z Datathon prototype.
 
-## Run on LinuxONE or locally
+---
 
-Use Python 3.10 or newer with its standard `sqlite3` module. Extract the deployment
-ZIP, enter its `TradeOff` folder, then run:
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| **Backend** | Python 3.10+ (stdlib only — no pip installs needed) |
+| **Server** | `http.server.ThreadingHTTPServer` |
+| **Database** | SQLite 3 (via Python's built-in `sqlite3`) |
+| **ML Model** | Multiclass Naive Bayes with Laplace smoothing + temperature scaling |
+| **Optimizer** | Deterministic candidate enumeration (constrained cost minimization) |
+| **Frontend** | React 19 + TypeScript |
+| **Frontend Build** | Vite 7 |
+| **Icons** | Lucide React |
+| **Auth** | PBKDF2-HMAC-SHA256 (600k iterations), HttpOnly session cookies |
+
+> **No GPU, model API key, Rust toolchain, or C compiler needed.** The pre-built frontend bundle is included — no Node.js required to run the server.
+
+---
+
+## Getting Started
+
+**Requirements:** Python 3.10+ only.
 
 ```bash
 python3 server.py
 ```
 
-Open http://localhost:8501 locally. For a remote VM, keep that server running and
-run this on your own computer, replacing USER and HOST:
+Open [http://localhost:8501](http://localhost:8501). Options:
+
+```bash
+python3 server.py --port 8502 --db /path/to/state.sqlite3
+```
+
+For a remote VM, tunnel via SSH:
 
 ```bash
 ssh -N -L 8501:127.0.0.1:8501 USER@HOST
 ```
 
-Open http://localhost:8501 on your computer. Stop the server/tunnel with Ctrl+C.
-`python3 app.py` also works. Options: `--port 8502` and `--db /path/to/state.sqlite3`.
-The default database is `runtime/tradeoff.sqlite3`; data survives a server restart.
-Use the same folder/database when restarting. The built-in server is for a local
-SSH-tunneled prototype, not a public production service.
+### Default Accounts
 
-## Demonstrate the real-time decision loop
-
-1. Sign in as **Network_Coordinator** using its generated password.
-2. In **Decision desk**, choose **Gradual congestion** and click
-   **Start scenario**. This archives the previous run and starts a new one.
-3. Four checkpoint events arrive every five seconds. The background server worker
-   updates shared state, scores primary-shipment risk, and creates a proposal.
-   The browser polls every two seconds; it does not drive event production.
-4. The stream pauses before revealing the outcome. Open candidate scenarios,
-   then click **Review recommendation** to inspect the proposed shipment table.
-5. **Approve & publish** or **Reject proposal**. Only approval replaces
-   the shared plan. A newer event invalidates older pending proposals/reviews.
-6. Sign in as **Factory_A** in another browser profile, or sign out and change accounts.
-   It sees its assigned shipments from the same approved plan.
-7. Return to the coordinator and **Reveal simulated outcome**. See realized cost,
-   unmet demand and minimum breaches. Compare with a run where no plan is approved.
-8. Inspect the event ledger, processing measurements, policy comparison, and audit
-   export. **New blank run** supports manually submitted demo updates.
-
-[DEMO_SCRIPT.md](DEMO_SCRIPT.md) gives a three-minute pitch sequence.
-
-The live network starts with A demand 600/day-2/minimum 400, B demand 500/day-4,
-S supply 800/day-1/$5, and T normal supply 300/day-3/$12. A separate confirmed
-**synthetic** T reserve pool has 600/day-2/$18. The initial allocation costs $7,600
-and uses no reserve. Backup stock is an explicit scenario assumption, not an
-inference from CSET or verified real-world availability.
-
-The **Historical model & allocation sandbox** is separate. Its sliders do not
-publish live state. To change shared state, use **Submit a demo event**.
-
-## Shared state, approval and audit
-
-SQLite transactions store scenario state, events, proposals, approvals/rejections,
-and outcomes. A single approved plan replaces prior reservations; approval does
-not add duplicate orders or transmit real purchases. New replay/blank runs archive
-previous records rather than delete them. Audit export contains the latest 200
-records per collection, including candidate plans and input snapshots; the database
-retains older records. Coordinator exports include all submitted network signals.
-
-Identical event-ID retries are deduplicated. Reusing an ID for a different payload
-returns 409. Out-of-order event time or simulation clock changes are logged and
-ignored. Events for an old run are rejected. A model failure rolls back the event
-and state change together. A replay step includes its expected cursor, preventing
-a stale click from unintentionally advancing to the outcome.
-
-Only the current run/revision can be approved. Proposal IDs and revisions are
-checked in a transaction. Repeated identical decisions are idempotent. A primary
-checkpoint older than 120 wall-clock seconds blocks approval: submit a fresh
-checkpoint or start a new run. Rejection retains the previous approved plan.
-If no candidate meets policy, the result is an escalation with no approval option.
-
-## Two distinct machine-learning models
-
-| Model | Training data | Purpose |
-| --- | --- | --- |
-| Shipment arrival model | 3,000 generated shipment episodes; separate 750-episode validation and 750-episode test sets | Predict a distribution of 0/1/2/4 days of additional primary-shipment delay from changing checkpoint signals. |
-| Historical DataCo v2 | 65,752 historical retail orders, grouped and chronologically split | Demonstrate an order-time delivery-risk baseline; not used to set live chip-shipment probabilities. |
-
-The new model is multiclass categorical Naive Bayes with Laplace smoothing and
-validation temperature scaling. Features bucket reported ETA deviation, checkpoint
-age, backlog, route condition and transit-progress lag. Its entire shipment episode
-stays in one split. Final delivery outcomes never enter earlier prediction inputs.
-Scenarios already in the past are removed. Observations beyond the modeled horizon
-escalate instead of producing unsupported low-risk estimates.
-
-It achieved 71.9% multiclass accuracy on **synthetic** test observations. This is
-not real semiconductor accuracy and cannot be compared with DataCo's 69.6% binary
-accuracy. Generator assumptions may favor the learned model. There is no online
-retraining; event-triggered inference uses a fixed, versioned model.
-
-The allocation layer generates deterministic candidate plans and compares expected
-cost across arrival scenarios. It excludes candidates with modeled probability
-above 10% of any hard-minimum breach, then picks the cheapest eligible candidate.
-This is a predefined illustrative policy, **not a production risk standard or a
-guarantee**. It is candidate enumeration, not global stochastic optimization.
-Committed purchases are charged even if late; unmet chips incur supplied penalties.
-
-See [REALTIME_MODEL_CARD.md](REALTIME_MODEL_CARD.md) for the simulation model and
-policy, and [MODEL_CARD.md](MODEL_CARD.md) for the historical DataCo model.
-
-## Measure decisions and latency
-
-The dashboard's **Run 300-episode comparison on this server** measures an ETA rule,
-a reported-facts optimizer, always reserving backup, and AI scenario planning.
-All policies see the same observations and realized synthetic outcomes. It uses
-the fixed standard scenario, not edits to the current run. Reported outcomes
-include mean cost, unmet chips, hard-minimum breaches and reserve consumption.
-The result states the actual server OS/architecture and generation time.
-
-Two timing scopes are kept separate:
-
-- Live p50/p95: server processing through core SQLite commit; excludes HTTP,
-  browser polling, human review and the final metric write. Delivery-only events
-  are excluded from event-to-proposal samples.
-- Policy comparison p50/p95: in-process model inference plus candidate planning;
-  excludes event ingestion, SQLite, HTTP and human review.
-
-Bundled measurements were taken on macOS/arm64. Run the comparison on your LinuxONE
-instance for its measurements. No hardware acceleration, high availability,
-throughput target, or end-to-end latency target is claimed from local tests.
-
-## Password accounts and Google OAuth
-
-The first server start creates five local accounts: `Network_Coordinator`,
-`Factory_A`, `Factory_B`, `Supplier_S`, and `Supplier_T`. Each receives a different
-random password. Read them on the server:
+On first start, five accounts are created automatically. Read credentials with:
 
 ```bash
 cat runtime/accounts-initial-credentials.txt
 ```
 
-Save the passwords privately, then delete that initial credentials file. It is
-created with owner-only permissions and excluded from the deployment ZIP, along
-with the account database. Existing accounts are never reset by restarting.
-Passwords are stored as individually salted PBKDF2-HMAC-SHA256 hashes with 600,000
-iterations in `runtime/accounts.sqlite3`. No password is embedded in the application.
-To choose your own password, use the hidden terminal prompts:
+| Account | Role |
+|---|---|
+| `Network_Coordinator` | Coordinator — approves proposals, exports audits, runs benchmarks |
+| `Factory_A`, `Factory_B` | Factory — views own approved shipment assignments |
+| `Supplier_S`, `Supplier_T` | Supplier — views own inputs |
+
+To reset or create accounts:
 
 ```bash
 python3 manage_users.py reset-password Network_Coordinator
 python3 manage_users.py create-user Another_Coordinator --workspace Coordinator
 ```
 
-`python3 manage_users.py init` can provision accounts before starting the server.
-Use `--auth-db /path/to/accounts.sqlite3` before the management command when using
-a custom account database; the server accepts the same option.
+---
 
-Workspace membership is assigned on the server. Coordinator accounts review and
-approve proposals, control replay, export audits, and run benchmarks. Suppliers
-and factories access their own inputs and approved assignments. A login payload
-cannot choose a different role. Failed sign-ins are limited to ten per source
-address in five minutes. Sessions use random HttpOnly/SameSite cookies, expire
-after eight hours, and end on restart, logout, or password reset. Google OAuth
-is still planned. Continue using the localhost server through an SSH tunnel.
+## Features
 
-## Event/API integration
+- **Decision Desk** — run scenarios, review AI proposals, approve or reject plans
+- **Model Explorer** — inspect the live shipment model and policy comparison
+- **What-if Lab** — historical DataCo sandbox with sliders (does not affect shared state)
+- **Decision Audit** — full coordinator report with timeline, cost breakdown, and PDF export
+- **Manual Updates** — submit live network signals (demand, supply, delivery events)
+- **Benchmark** — run 300-episode policy comparison directly on the server
 
-The ingestion boundary accepts timestamped JSON, so a future feed adapter can
-post updates instead of the replay worker. No live ERP, sensor, supplier, IBM MQ,
-or Kafka connection has been configured. External test events must use source
-`external_demo`; browser events use `manual_demo`; `simulation_replay` is internal.
+---
 
-All `/api/live/` endpoints require a password-authenticated session. Login accepts
-`{"username":"Network_Coordinator","password":"YOUR_PASSWORD"}` at `POST /api/login`.
-Keep the returned session cookie for subsequent requests. The browser does this
-without storing your password.
+## ML Models
 
-Example event schema (use the current run ID and a fresh timezone-qualified ISO
-timestamp; simulation hour must not move backward):
+| Model | Data | Purpose |
+|---|---|---|
+| Shipment arrival model | 3,000 synthetic episodes (750 val / 750 test) | Predicts 0/1/2/4-day delay distribution from checkpoint signals |
+| Historical DataCo baseline | 65,752 retail orders (chronological split) | Delivery-risk baseline for sandbox; not used in live decisions |
+
+**Live model accuracy:** 71.9% multiclass on synthetic test set. Not comparable to DataCo's 69.6% binary accuracy.
+
+---
+
+## API Reference
+
+All `/api/live/` endpoints require an authenticated session (`POST /api/login`).
+
+| Endpoint | Method | Description |
+|---|---|---|
+| `/api/live/state` | GET | Scenario state and proposals (scoped by role) |
+| `/api/live/events` | POST | Ingest, score, and propose from a checkpoint event |
+| `/api/live/decision` | POST | Approve or reject a proposal (coordinator only) |
+| `/api/live/replay` | POST | Control scenario replay (start / pause / step) |
+| `/api/live/reset` | POST | Start a new blank run (retains history) |
+| `/api/live/metrics` | GET | Counters, latencies, and revealed outcome |
+| `/api/live/audit` | GET | Full coordinator audit export with snapshots |
+| `/api/live/benchmark` | GET / POST | Read or run a 300-episode policy comparison |
+
+Example event payload:
 
 ```json
 {
-  "event_id": "unique-checkpoint-001",
+  "event_id": "checkpoint-001",
   "run_id": "CURRENT_RUN_ID",
-  "occurred_at": "CURRENT_ISO_TIMESTAMP",
+  "occurred_at": "2026-01-01T12:00:00+00:00",
   "simulation_hour": 12,
   "source": "external_demo",
   "type": "shipment_update",
@@ -200,101 +125,59 @@ timestamp; simulation hour must not move backward):
 }
 ```
 
-Send it with `POST /api/live/events`. Supply-pool updates use `inventory_update`
-and capacity/arrival/unit_cost. Factory updates use `demand_update` and
-quantity/deadline/minimum/penalty. Changes are type/range validated. A delivery
-outcome is a separate `delivery` event and cannot reveal a future arrival.
-Primary prediction applies to S only; backup pools are assumed confirmed.
-Manual events pause an active replay. Don't mix independent clocks in a run.
+---
 
-| Endpoint | Method | Purpose |
-| --- | --- | --- |
-| `/api/live/state` | GET | Shared scenario/proposals for coordinator; scoped approved plan for participants. |
-| `/api/live/events` | POST | Validate, store, score and propose; event-ID idempotency. |
-| `/api/live/decision` | POST | Coordinator `{proposal_id, revision, decision: "approve" or "reject", note}`. |
-| `/api/live/replay` | POST | Start `{action:"start",run_id,revision,scenario,interval_seconds}`; pause/resume `{action,run_id}`; step `{action:"step",run_id,index}`. |
-| `/api/live/reset` | POST | New blank run `{run_id,revision}`; retain history. |
-| `/api/live/metrics` | GET | Current-run counters, p50/p95 and revealed outcome. |
-| `/api/live/audit` | GET | Coordinator action/event/proposal export with snapshots. |
-| `/api/live/model` | GET | Simulation model metadata and evaluation. |
-| `/api/live/benchmark` | GET / POST | Read the latest report, or run `{episodes:300}` (10–1000). |
+## Frontend Development
 
-Older `/api/model`, `/api/context`, `/api/risk`, `/api/analyze` and `/api/solve`
-remain for the separate historical/sandbox functions. Participant `/api/solve`
-now returns the shared approved plan. Missing model artifacts never produce fake
-predictions. Unauthenticated requests return 401, wrong-workspace requests 403,
-and stale/conflicting writes 409.
-
-## Reproduce and test
-
-The ZIP includes trained JSON artifacts and requires no dataset downloads to run.
-
-```bash
-python3 shipment_model.py
-python3 benchmark_live.py --episodes 300
-python3 -m unittest discover -s tests -v
-```
-
-To rebuild the separate historical models/context:
-
-```bash
-python3 fetch_data.py
-python3 train_model.py --output models/baseline_delivery_risk.json --report reports/baseline_evaluation.json
-python3 improve_model.py
-python3 dataset_context.py
-```
-
-DataCo raw data is downloaded from its public Kaggle dataset; if that endpoint
-requires login, manually place `DataCoSupplyChainDataset.csv` in `data/raw/`.
-Raw files and runtime databases are ignored by Git and excluded from deployment.
-The optional notebook can run in an existing Jupyter environment; it is not needed
-by the dashboard. Training and inference have been tested locally, not on your
-assigned s390x host. Any ONNX/Telum/watsonx integration remains future work.
-
-## Dataset provenance
-
-- [DataCo](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis): historical retail delivery model; excluded post-delivery fields, identities and credentials. V2 historical test accuracy 69.6%, ROC AUC 0.746, recall 56.7%; comparison with v1 is retrospective.
-- [CSET Chip Explorer](https://github.com/georgetown-cset/eto-chip-explorer/tree/main/data): source-linked geography shares and semiconductor relationships, not outage labels or usable capacities. Its application snapshot differs from its official release; aggregate geography buckets are not single countries.
-- [SMAT2022](https://github.com/kwoo-lee/SMAT2022): LVHM_E static factory/AMHS topology; no Windows simulator or production-outcome labels are used.
-
-There is no verified record-level join between those sources. Original source
-terms remain with their publishers. Source hashes are in `models/dataset_context.json`.
-The live model's generated episodes are a fourth, explicitly synthetic source.
-
-## Readable audit report
-
-Choose **Decision audit** in the decision desk to open the coordinator report.
-It includes the current outcome and cost breakdown, approved shipments, a timeline,
-expandable AI recommendations, and reported event changes. Select a run to inspect
-retained records from previous runs. The snapshot contains up to 200 records per
-collection across all runs; complete outcome summaries cover the current run.
-Use **Print / Save as PDF** to share a readable report or download its source JSON.
-The report uses the same coordinator permissions as the audit API.
-
-## React interface
-
-The default app is a responsive React workspace with a decision desk, model explorer,
-what-if lab, readable decision audit, and manual updates. Login remains the existing
-username/password flow. No email service, OTP, or Google OAuth is configured.
-
-The production JavaScript and CSS are bundled locally in `static/ui/`. The deployment
-ZIP includes these assets, so LinuxONE still runs only `python3 server.py`; no npm,
-Node.js, frontend CDN, or additional Python packages are required on the server.
-Keep `runtime/` when updating to preserve existing accounts and network state.
-
-For frontend development only, use Node.js 22.12+ (or 20.19+) and run:
+The pre-built bundle in `static/ui/` is served by the Python server — no Node.js needed at runtime. To rebuild:
 
 ```bash
 cd frontend
 npm ci
-npm run build
+npm run build   # rebuilds static/ui/
+npm run dev     # Vite dev server, proxies /api to Python on :8501
 ```
 
-This rebuilds `static/ui/`; refresh your browser after rebuilding. `npm run dev`
-starts a Vite development server and forwards `/api` to Python on port 8501.
-The production server's `--port` option still works as before. React sources and
-the lockfile are included in the ZIP; `node_modules/` and runtime files are excluded.
+Requires Node.js 20.19+ or 22.12+.
 
-The shipment model uses synthetic episodes; DataCo is a separate historical retail
-benchmark, and CSET/SMAT are contextual datasets. Interactive visuals do not imply
-a validated join or real industrial prediction accuracy.
+---
+
+## Testing & Reproducibility
+
+```bash
+python3 -m unittest discover -s tests -v   # unit tests
+python3 shipment_model.py                  # retrain live model
+python3 benchmark_live.py --episodes 300   # policy benchmark
+```
+
+To rebuild the historical DataCo model:
+
+```bash
+python3 fetch_data.py          # downloads DataCo dataset from Kaggle
+python3 train_model.py
+python3 improve_model.py
+python3 dataset_context.py
+```
+
+---
+
+## Dataset Provenance
+
+| Dataset | Use |
+|---|---|
+| [DataCo](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis) | Historical retail delivery model (sandbox only) |
+| [CSET Chip Explorer](https://github.com/georgetown-cset/eto-chip-explorer) | Geography and semiconductor relationship context |
+| [SMAT2022](https://github.com/kwoo-lee/SMAT2022) | Factory/AMHS static topology reference |
+| Synthetic episodes | Live shipment model training data (explicitly generated) |
+
+Source hashes are in `models/dataset_context.json`. No verified record-level join exists between these sources.
+
+---
+
+## Security Notes
+
+- Passwords stored as individually salted PBKDF2-HMAC-SHA256 hashes (600k iterations)
+- Sessions use random HttpOnly/SameSite cookies, expire after 8 hours
+- Login rate-limited to 10 attempts per source address per 5 minutes
+- `runtime/` (databases, credentials) is excluded from the deployment ZIP and ignored by Git
+
